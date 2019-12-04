@@ -11,7 +11,7 @@ import {
   MDBCollapse
 } from "mdbreact";
 import { BrowserRouter as Router } from "react-router-dom";
-import NavBarLogo from '../../assets/logo.svg'
+import NavBarLogo from '../../assets/Logo.svg'
 
 export const NavBar = () => {
   const [isOpen, setisOpen] = useState(false);
