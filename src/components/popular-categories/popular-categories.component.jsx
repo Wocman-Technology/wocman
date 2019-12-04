@@ -1,13 +1,14 @@
 import React from "react";
 
-import { PopularCaregoriesWrapper, HeadingWrapper } from "./popular-categories.styles";
+import { PopularCaregoriesWrapper} from "./popular-categories.styles";
 
 import { PopularCategory } from "../popular-category/popular-category.component";
-import {categories} from './data'
+import {SectionHeader} from '../heading-wrapper/heading-wrapper.component'
+import {categories} from '../../Pages/HomePage/data'
 
 export const PopularCategories = () => (
     <>
-    <HeadingWrapper>Popular Job Categories</HeadingWrapper>
+    <SectionHeader>Popular Job Categories</SectionHeader>
   <PopularCaregoriesWrapper>
     {categories.map(category => <PopularCategory key={category['id']}{...category}/>)}
   </PopularCaregoriesWrapper>
