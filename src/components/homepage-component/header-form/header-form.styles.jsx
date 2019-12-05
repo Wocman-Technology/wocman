@@ -1,9 +1,35 @@
 import styled from 'styled-components';
 import {CustomButton} from '../../custom-button/custom-button.component'
 
+
+export const FormOuterWrapper = styled.div`
+    z-index: 3;
+    margin-top: 16rem;
+    .header-button {
+    display: flex;
+    width: 80%;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: -5rem;
+    margin-left: -0.1rem;
+    padding: 0;
+
+    button {
+      font-size: 0.7rem;
+      border: none !important;
+    }
+  }
+
+  @media (max-width: 1024px) {
+        display: none;
+    }
+
+`
+
 export const FormWrapper = styled.div`
     width: 80%;
-    position: absolute;
+    position: relative;
+    z-index: 3;
     display: grid;
     grid-template-columns: repeat(3, 32%);
     grid-gap: 0;
