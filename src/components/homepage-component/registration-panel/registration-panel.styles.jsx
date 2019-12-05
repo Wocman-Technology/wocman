@@ -60,7 +60,7 @@ export const DivWrapper = styled.div`
            grid-template-columns: 1fr;
            justify-content: flex-end !important;
            align-items: flex-end !important;
-           min-height: ${props => props.customer ? "90%" : "80%"};
+           min-height: ${props => props.customer ? "65%" : "80%"};
            padding-top: 0 !important;
            margin-top: ${props => props.customer ? "-1.2rem" : "0"};
 
@@ -77,6 +77,7 @@ export const ButtonWrapper = styled(CustomButton)`
        max-width: 165px;
        align-self: flex-end !important;
        margin-left: ${props => props.regular ? "0" : "64%"};
+       margin-top: ${props => props.regular ? "1rem" : "0"};
       
 
        &:hover {

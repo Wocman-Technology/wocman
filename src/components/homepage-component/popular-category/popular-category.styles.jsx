@@ -20,9 +20,12 @@ align-items: center;
 color: #552D1E;
     }
 
+
     small {
         display: inline-block;
         margin-top: 2rem;
+        font-size: 1rem;
+        letter-spacing: 0.8px;
     }
 
     @media (max-width: 768px){

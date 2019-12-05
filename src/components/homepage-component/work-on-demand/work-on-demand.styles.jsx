@@ -24,6 +24,6 @@ export const ButtonWrapper = styled(CustomButton)`
 text-transform: uppercase;
 font-size: 13px;
 margin: 0 auto;
-margin-top: 21.5rem;
+margin-top: 23.5rem;
 width: 250px;
 `

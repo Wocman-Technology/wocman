@@ -56,17 +56,16 @@ export const HeaderWrapper = styled.header`
     width: 80%;
     position: absolute;
     margin: auto;
-    bottom: 4rem;
-    left: 9.2rem;
+    bottom: 5rem;
+    left: 10.52rem;
     padding: 0;
 
     button {
       font-size: 0.7rem;
     }
 
-
     @media (max-width: 1125px) {
-      left: 7.3rem;
+      left: 8.6rem;
     }
 
     @media (max-width: 900px) {
@@ -74,33 +73,33 @@ export const HeaderWrapper = styled.header`
     }
   }
 
-  @media (max-width: 768px){
+  @media (max-width: 768px) {
     .landingwords {
-    display: block;
-    text-align: center;
-    word-break: normal;
-    width: 100%;
-    padding: 2rem;
-    margin: auto;
-    margin-top: 10vw;
-    color: white;
-    h2 {
+      display: block;
+      text-align: center;
+      word-break: normal;
+      width: 100%;
+      padding: 2rem;
+      margin: auto;
+      margin-top: 10vw;
+      color: white;
+      h2 {
         font-size: 2.5rem;
-    }
-    p {
+      }
+      p {
         font-size: 1.5rem;
         margin-top: 3rem;
-    }
+      }
     }
   }
 
   @media (max-width: 350px) {
     h2 {
-        font-size: 1.7rem !important;
+      font-size: 1.7rem !important;
     }
     p {
-        font-size: 1rem !important;
-        margin-top: 2rem !important;
+      font-size: 1rem !important;
+      margin-top: 2rem !important;
+    }
   }
-}
 `;
