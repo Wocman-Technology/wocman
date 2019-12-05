@@ -4,18 +4,18 @@ const buttonStyles = css`
 
     background: #552D1E;
     border-radius: 2px;
-    color: #FFF5EE;
+    color: #FFFFFF;
     border: none;
 
     &:hover {
-        background: #FFF5EE;
+        background: #FFFFFF;
         box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.3);
         color: #552D1E;
     }
 `
 
 const invertedButtonStyles = css`
-    background: #FFF5EE;
+    background: #FFFFFF;
     box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.3);
     border-radius: 2px;
     color: #552D1E;
@@ -23,7 +23,7 @@ const invertedButtonStyles = css`
 
     &:hover {
         background: #552D1E;
-        color: #FFF5EE;
+        color: #FFFFFF;
 
     }
 `
@@ -48,7 +48,7 @@ export const ButtonWrapper = styled.button`
   cursor: pointer;
   display: flex;
   justify-content: center;
-
-${getButtonStyles}
+  ${getButtonStyles}
+  border: ${props => props.regular ? "1px solid #552D1E" : "1px solid #FFF5EE"};
 
 `

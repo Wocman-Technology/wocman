@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const regularSection = ({regular}) => {
 
-    return regular ? "margin-top: 5rem" : "margin-top: 14rem"
+    return regular ? "margin-top: 7rem" : "margin-top: 14rem"
 }
 
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import {HeaderWrapper} from './header.styles'
 import {NavBar} from '../navbar/navbar.component'
-import {HeaderForm} from '../header-form/header-form.component';
+import {HeaderForm} from '../../components/homepage-component/header-form/header-form.component';
 import {CustomButton} from '../custom-button/custom-button.component';
 
 

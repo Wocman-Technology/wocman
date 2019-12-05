@@ -7,9 +7,22 @@ import FifthIcon from "../../assets/fifth-icon.svg";
 import SixthIcon from "../../assets/sixth-icon.svg";
 
 //Top Rated Jobs
-import FirstJob from '../../assets/first-job.svg'
-import SecondJob from '../../assets/second-job.svg'
-import ThirdJob from '../../assets/third-job.svg'
+import FirstJob from "../../assets/first-job.svg";
+import SecondJob from "../../assets/second-job.svg";
+import ThirdJob from "../../assets/third-job.svg";
+
+// On Demand Jobs
+
+// Regukar sized pictures
+import Carterer from "../../assets/caterer.svg";
+import Carpenter from "../../assets/carpenter.svg";
+import Mechanic from "../../assets/mechanic.svg";
+
+// Mini pictures
+
+import Cart from "../../assets/cart.svg";
+import Carp from "../../assets/carp.svg";
+import Mech from "../../assets/mech.svg";
 
 export const categories = [
   {
@@ -47,28 +60,62 @@ export const categories = [
     title: "Brain Power",
     desc:
       " Are you in need of professionals in different fields to include civil engineers, surveyors, architects, builders, interior designers, renewable energy engineers, geologists, even programmers, digital marketers and so much more."
-  },
-
+  }
 ];
-
 
 export const topJobs = [
   {
     id: `${FirstJob}`,
     img: `${FirstJob}`,
     title: "Welding",
-    bullets: ["Prepare welding surface", "Attach grounding and camp", "Slag", "Arc length measurement."]
+    bullets: [
+      "Prepare welding surface",
+      "Attach grounding and camp",
+      "Slag",
+      "Arc length measurement."
+    ]
   },
   {
     id: `${SecondJob}`,
     img: `${SecondJob}`,
     title: "Fumigation",
-    bullets: ["Seal consumables", "Alternative lodging", "Open all doors", "Give free access"]
+    bullets: [
+      "Seal consumables",
+      "Alternative lodging",
+      "Open all doors",
+      "Give free access"
+    ]
   },
   {
     id: `${ThirdJob}`,
     img: `${ThirdJob}`,
     title: "Carpenter",
-    bullets: ["Measurement drawing", "Redevelopment", "Layout of furniture", "Plumbing plan. equipment"]
+    bullets: [
+      "Measurement drawing",
+      "Redevelopment",
+      "Layout of furniture",
+      "Plumbing plan. equipment"
+    ]
   }
-]
+];
+
+export const onDemandJobs = [
+  {
+    id: `${Cart}`,
+    logo: `${Carterer}`,
+    img: `${Cart}`,
+    title: "Carterer"
+  },
+  {
+    id: `${Carp}`,
+    logo: `${Carpenter}`,
+    img: `${Carp}`,
+    title: "Carpenter"
+  },
+  {
+    id: `${Mech}`,
+    logo: `${Mechanic}`,
+    img: `${Mech}`,
+    title: "Mechanic"
+  }
+];
