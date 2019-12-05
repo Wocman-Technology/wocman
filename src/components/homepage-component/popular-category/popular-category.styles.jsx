@@ -26,6 +26,7 @@ color: #552D1E;
         margin-top: 2rem;
         font-size: 1rem;
         letter-spacing: 0.8px;
+        line-height: 27px;
     }
 
     @media (max-width: 768px){

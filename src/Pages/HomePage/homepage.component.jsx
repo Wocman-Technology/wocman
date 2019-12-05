@@ -6,6 +6,8 @@ import {TopRatedJobs} from '../../components/homepage-component/top-rated-jobs/t
 import {RegistrationPanel} from '../../components/homepage-component/registration-panel/registration-panel.component';
 import {WorksOnDemand} from '../../components/homepage-component/works-on-demand/works-on-demand.component';
 import {Faq} from '../../components/homepage-component/faq/faq.component'
+import {NewsLetter} from "../../components/newsletter/newsletter.component"
+import {Footer} from '../../components/footer/footer.component';
 
 export const HomePage = () => (
     <>
@@ -15,5 +17,7 @@ export const HomePage = () => (
     <RegistrationPanel/>
     <WorksOnDemand/>
     <Faq/>
+    <NewsLetter/>
+    <Footer/>
     </>
 )

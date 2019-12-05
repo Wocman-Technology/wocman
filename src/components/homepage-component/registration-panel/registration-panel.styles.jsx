@@ -76,7 +76,7 @@ export const ButtonWrapper = styled(CustomButton)`
        transition: 0.5s;
        max-width: 165px;
        align-self: flex-end !important;
-       margin-left: ${props => props.regular ? "0" : "64%"};
+       margin-left: ${props => props.regular ? "0" : "70%"};
        margin-top: ${props => props.regular ? "1rem" : "0"};
       
 

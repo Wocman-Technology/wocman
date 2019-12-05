@@ -19,6 +19,11 @@ export const FormWrapper = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0px 10px 10px 10px;
 
+    @media (width: 1024px) {
+    left: calc(100% - 88vw);
+    top: 45.6rem;
+    }
+
     @media (max-width: 900px) {
         display: none;
     }

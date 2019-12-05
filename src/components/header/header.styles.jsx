@@ -11,6 +11,18 @@ export const HeaderWrapper = styled.header`
   height: 100vh;
   width: 100%;
 
+  @media (max-width: 767px) {
+    height: 80vh;
+  }
+
+  @media (width: 768px){
+    height: 50vh;
+  }
+
+  @media (width: 1024px){
+    height: 50vh;
+  }
+
   .landingwords {
     display: block;
     text-align: center;
@@ -62,14 +74,20 @@ export const HeaderWrapper = styled.header`
 
     button {
       font-size: 0.7rem;
+      border: none !important;
     }
 
     @media (max-width: 1125px) {
-      left: 8.6rem;
+      left: 8.4rem;
     }
 
     @media (max-width: 900px) {
       display: none;
+    }
+
+    @media (width: 1024px) {
+      bottom: 51.9rem;
+      left: 8.7rem;
     }
   }
 
