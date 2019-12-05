@@ -5,13 +5,14 @@ import {CustomButton} from '../../custom-button/custom-button.component'
 export const FormOuterWrapper = styled.div`
     z-index: 3;
     margin-top: 16rem;
+
     .header-button {
     display: flex;
     width: 80%;
     position: relative;
     margin: 0 auto;
     margin-bottom: -5rem;
-    margin-left: -0.1rem;
+    margin-left: -0.9rem;
     padding: 0;
 
     button {
@@ -20,7 +21,7 @@ export const FormOuterWrapper = styled.div`
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 900px) {
         display: none;
     }
 
@@ -51,6 +52,10 @@ export const FormWrapper = styled.div`
     }
 
     @media (max-width: 900px) {
+        display: none;
+    }
+
+    @media (width: 1024px) {
         display: none;
     }
 
