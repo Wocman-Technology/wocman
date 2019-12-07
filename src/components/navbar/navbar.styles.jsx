@@ -61,11 +61,14 @@ export const NavWrapper = styled.nav`
 
   @media (min-width: 768px) and (max-width: 900px){
       nav {
+        ul:nth-child(1) {
+        margin-left: 7rem;
+    }
         ul:not(:nth-child(1)) {
         li {
           a {
             button {
-              display: none !important;
+              /* display: none !important; */
             }
           }
         }

@@ -11,6 +11,10 @@ export const TopRatedJobWrapper = styled.article`
     @media (max-width: 768px){
         margin: 4rem 0 !important;
     }
+
+    @media (min-width: 768px) and (max-width: 1100px) {
+        margin: 4rem 0 !important;
+    }
 `
 
 export const CardWrapper = styled(MDBCard)`

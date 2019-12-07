@@ -12,5 +12,9 @@ export const WorksOnDemandWrapper = styled.section`
      grid-template-columns: 1fr;
      grid-row-gap: 7rem;
      padding: 0 3rem;
- }
+     }
+     @media (min-width: 768px) and (max-width: 1100px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 8rem;
+     }
 `

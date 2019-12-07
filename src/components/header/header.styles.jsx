@@ -2,7 +2,7 @@ import styled from "styled-components";
 import HeaderImage from "../../assets/header.svg";
 
 export const HeaderWrapper = styled.header`
-  background-image: url(${HeaderImage});
+  background-image: ${(props => `url(${props.image})`)};
   background-position: center center;
   background-repeat: no-repeat;
   object-fit: cover;
@@ -40,7 +40,7 @@ export const HeaderWrapper = styled.header`
       line-height: 132.83%;
       /* or 64px */
 
-      display: flex;
+      /* display: flex; */
       align-items: center;
       text-align: center;
       /* text-transform: capitalize; */

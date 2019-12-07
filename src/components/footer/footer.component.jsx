@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import { FooterWrapper } from "./footer.styles";
 import NavBarLogo from "../../assets/Logo.svg";
@@ -11,7 +12,9 @@ export const Footer = () => {
           <MDBRow className="text-center text-md-left mt-3 pb-3">
             <MDBCol md="3" lg="3" xl="3" className="mx-auto mt-3">
               <div className="img__div">
+                <Link to="/">
                 <img className="pl-3" src={NavBarLogo} alt="logo" />
+                </Link>
               </div>
             </MDBCol>
             <hr className="w-100 clearfix d-md-none" />
@@ -36,7 +39,7 @@ export const Footer = () => {
             <hr className="w-100 clearfix d-md-none" />
             <MDBCol md="2" lg="2" xl="2" className="mx-auto mt-3">
               <p>
-                <a href="#!">About us</a>
+                <Link to="/about">About us</Link>
               </p>
               <p>
                 <a href="#!">How it works</a>

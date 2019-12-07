@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavWrapper } from "./navbar.styles";
+import { Link } from 'react-router-dom';
 import {
   MDBNavbar,
   MDBBtn,
@@ -10,18 +11,18 @@ import {
   MDBNavbarToggler,
   MDBCollapse
 } from "mdbreact";
-import { BrowserRouter as Router } from "react-router-dom";
 import NavBarLogo from '../../assets/Logo.svg'
 
 export const NavBar = () => {
   const [isOpen, setisOpen] = useState(false);
 
   return (
-    <Router>
       <NavWrapper>
         <MDBNavbar color="default-color" dark expand="md">
           <MDBNavbarBrand>
+            <Link to="/">
             <img src={NavBarLogo} title="wocman"></img>
+            </Link>
           </MDBNavbarBrand>
           <MDBNavbarToggler onClick={() => setisOpen(!isOpen)} />
           <MDBCollapse id="navbarCollapse3" isOpen={isOpen} navbar>
@@ -30,7 +31,7 @@ export const NavBar = () => {
                 <MDBNavLink to="#!">Home</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink to="#!">About Us</MDBNavLink>
+                <MDBNavLink to="/about">About Us</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
                 <MDBNavLink to="#!">Product</MDBNavLink>
@@ -57,6 +58,5 @@ export const NavBar = () => {
           </MDBCollapse>
         </MDBNavbar>
       </NavWrapper>
-    </Router>
   );
 };
