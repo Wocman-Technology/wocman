@@ -55,7 +55,7 @@ export const HeaderWrapper = styled.header`
       line-height: 180%;
       /* or 40px */
 
-      display: flex;
+      /* display: flex; */
       align-items: center;
       text-align: center;
 
