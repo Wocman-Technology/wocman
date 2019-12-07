@@ -77,6 +77,10 @@ export const NewsLetterWrapper = styled.div`
             background: #EFEFF7;
             border-radius: 5px;
         }
+        button.sc-bwzfXH.eIyaYk {
+             max-width: 200px !important;
+             margin: auto;
+            }
     }
     }
 
