@@ -28,7 +28,7 @@ export const NavBar = () => {
           <MDBCollapse id="navbarCollapse3" isOpen={isOpen} navbar>
             <MDBNavbarNav left>
               <MDBNavItem >
-                <MDBNavLink to="#!">Home</MDBNavLink>
+                <MDBNavLink to="/">Home</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
                 <MDBNavLink to="/about">About Us</MDBNavLink>
