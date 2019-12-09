@@ -21,7 +21,7 @@ export const Team = () => {
                 className="rounded-circle z-depth-1 img-fluid"
                 alt="Sample avatar"
               />
-              <h5 className="font-weight-bold mt-4 mb-3">Anna Williams</h5>
+              <h5 className="font-weight-bold mt-4 mb-3">Olalekan Ilesanmi</h5>
               <p className="text-uppercase font-weight-bold grey-text">Founder</p>
               <ul className="list-unstyled mb-0">
                 <a href="#!" className="p-2 fa-lg">
@@ -31,7 +31,7 @@ export const Team = () => {
                   <MDBIcon fab icon="twitter" className="blue-text" />
                 </a>
                 <a href="#!" className="p-2 fa-lg">
-                  <MDBIcon fab icon="instagram" className="blue-text" />
+                  <MDBIcon fab icon="linkedin" className="blue-text" />
                 </a>
               </ul>
             </MDBCol>
@@ -50,7 +50,13 @@ export const Team = () => {
                   <MDBIcon fab icon="facebook-f" className="blue-text" />
                 </a>
                 <a href="#!" className="p-2 fa-lg">
-                  <MDBIcon fab icon="instagram" className="blue-text" />
+                  <MDBIcon fab icon="twitter" className="blue-text" />
+                </a>
+                <a href="#!" className="p-2 fa-lg">
+                  <MDBIcon fab icon="linkedin" className="blue-text" />
+                </a>  
+                <a href="#!" className="p-2 fa-lg">
+                  <MDBIcon fab icon="github" className="blue-text" />
                 </a>
               </ul>
             </MDBCol>
@@ -68,6 +74,12 @@ export const Team = () => {
                 <a href="#!" className="p-2 fa-lg">
                   <MDBIcon fab icon="facebook-f" className="blue-text" />
                 </a>
+                <a href="#!" className="p-2 fa-lg">
+                  <MDBIcon fab icon="twitter" className="blue-text" />
+                </a>
+                <a href="#!" className="p-2 fa-lg">
+                  <MDBIcon fab icon="linkedin" className="blue-text" />
+                </a>  
                 <a href="#!" className="p-2 fa-lg">
                   <MDBIcon fab icon="instagram" className="blue-text" />
                 </a>
@@ -90,6 +102,12 @@ export const Team = () => {
                 <a href="#!" className="p-2 fa-lg">
                   <MDBIcon fab icon="facebook-f" className="blue-text" />
                 </a>
+                <a href="#!" className="p-2 fa-lg">
+                  <MDBIcon fab icon="twitter" className="blue-text" />
+                </a>
+                <a href="#!" className="p-2 fa-lg">
+                  <MDBIcon fab icon="linkedin" className="blue-text" />
+                </a>  
                 <a href="#!" className="p-2 fa-lg">
                   <MDBIcon fab icon="github" className="blue-text" />
                 </a>
