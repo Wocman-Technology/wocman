@@ -1,5 +1,14 @@
 <?php
 
+
+/**
+ * wocman
+ *
+ * Details: This file is part of the wocman technology file
+ * Author: Justice
+ *
+ */
+
     /*$emailaddress = $email;
     $emailSubject = $subject;
     $bodyTitle = "";

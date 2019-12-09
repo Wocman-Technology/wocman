@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * wocman
+ *
+ * Details: This file is part of the wocman technology file
+ * Author: Justice
+ *
+ */
+
 require 'route.php';
 
 //basics
@@ -58,7 +66,7 @@ if (defined(trim($_r,'?'))) {
 			return false;
 		}
 	}
-	
+	$wocman_route = "&wocman_route=".wocman_route;
 	$field_string = '';
 	$push = [];
 	foreach ($_POST as $key => $value) {
@@ -66,8 +74,9 @@ if (defined(trim($_r,'?'))) {
 		$field_strings = $key.'='.$value;
 		array_push($push, $field_strings);
 	}
+	array_push($push, $wocman_route);
 	rtrim($field_string, '&');
-	define("route", website_link."controller/?".$x[1]);
+	define("route", website_link."controller/?".$x[1].$wocman_route);
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, route);
 	if ($_SERVER['REQUEST_METHOD'] === 'POST' &&  trim($x[0]) === $_SERVER['REQUEST_METHOD']) {

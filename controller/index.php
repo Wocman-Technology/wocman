@@ -9,6 +9,12 @@
 
 require '../database/xc4f_config.php';
 
+if (isset($_GET['wocman_route'])?$_GET['wocman_route']:'' == (string)wocman_route) {
+}else{
+    echo json_encode(["status" => "Invalid access"]);
+    return false;
+
+}
 require WOCMAN_DIR.'database/'.WOCMAN_PREFIX_FILE.'mysqli.php';
 require WOCMAN_DIR.WOCMAN_PREFIX_FILE.'clean.php';
 require WOCMAN_DIR.WOCMAN_PREFIX_FILE.'function.php';
@@ -61,7 +67,7 @@ if ($routes == "?customer_register") {
     $key = password_hash($cusomer_password, PASSWORD_DEFAULT);
 
     $url_email = website_link."verify/?url=".$key.WOCMAN_SPLIT.$customer_email_address.WOCMAN_SPLIT.$type;
-    var_dump($url_email); 
+    //var_dump($url_email); 
 
     $bodyTitle = "Wocman Customer Account Confirmatoin";
     $subject = "Account Confirmatoin";
@@ -139,7 +145,7 @@ if ($routes == "?customer_register") {
     $key = password_hash($cusomer_password, PASSWORD_DEFAULT);
 
     $url_email = website_link."verify/?url=".$key.WOCMAN_SPLIT.$customer_email_address.WOCMAN_SPLIT.$type;
-    var_dump($url_email); 
+    //var_dump($url_email); 
 
     $bodyTitle = "Wocman Technology Account Confirmatoin";
     $subject = "Workman Account Confirmatoin";
@@ -683,9 +689,23 @@ if ($routes == "?customer_register") {
     }
     
 }elseif($routes == "?tokennizer_wocman"){
+     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $myObj = new stdClass();
+        $myObj->row = null;
+        $myObj->count = null;
+        $myObj->status = null;
+        $myObj->status_code = null;
+        $myJSON = json_encode($myObj);
+        echo $myJSON;
+        return false;
+    }else{
+        
+    }
     echo json_encode(['status' => $_SESSION['token']]);
 }else{  
-    ?><script type="text/javascript">window.location='<?php echo $invalid_url; ?>';</script><?php
+
+    echo json_encode(["status" => null]);
+    return false;
 }
 
 ?>

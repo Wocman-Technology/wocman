@@ -17,6 +17,7 @@ define("WOCMAN_PREFIX", "wokman_xcvfg67uuygh_");
 define("WOCMAN_PREFIX_FILE", "xc4f_");
 define("WOCMAN_SPLIT", "xxwocmanxx");
 define('website_link', 'http://localhost/wocman/');
+define('wocman_route', 'xma3874dsdsdAhsahsZXdfhjsd7ds7Aw2SAmnsdfjdskfj94853hhdke4es6gfsjdbkjS');
 
 if(!defined('WOCMAN_DIR'))
 {

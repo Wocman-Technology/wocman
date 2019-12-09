@@ -1,5 +1,15 @@
 <?php
 
+
+/**
+ * wocman
+ *
+ * Details: This file is part of the wocman technology file
+ * Author: Justice
+ *
+ */
+define('wocman_route', 'xma3874dsdsdAhsahsZXdfhjsd7ds7Aw2SAmnsdfjdskfj94853hhdke4es6gfsjdbkjS');
+
 //routes
 
 //workman route
