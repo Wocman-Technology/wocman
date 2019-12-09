@@ -58,6 +58,8 @@ if ($routes == "?customer_register") {
     $phone =  remove_tags($phone);$ee= filter_string($phone);  $ee= stringLength($ee,4,15); $customer_phone=normalize($ee, $url, $error);
 
     $type = "Customer";
+     $check = $mysqli->query("SELECT * FROM $tbl_temp WHERE email='$customer_email_address' AND password='$cusomer_password' ");
+    if ($check->num_rows < 1) {
 
     if($mysqli->query("INSERT INTO $tbl_temp(`email`,`name`,`phone`,`password`,`type`) VALUES('$customer_email_address','$customer_name','$customer_phone','$cusomer_password','$type') ")){
 
@@ -100,6 +102,15 @@ if ($routes == "?customer_register") {
     $myJSON = json_encode($myObj);
     echo $myJSON;
     }
+}else{
+    $myObj = new stdClass();
+    $myObj->row = null;
+    $myObj->count = null;
+    $myObj->status = null;
+    $myObj->status_code = "user already exist";
+    $myJSON = json_encode($myObj);
+    echo $myJSON;
+}
     
 }elseif($routes == "?workman_register") {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -130,12 +141,15 @@ if ($routes == "?customer_register") {
     $phone =  remove_tags($phone);$ee= filter_string($phone);  $ee= stringLength($ee,4,15); $customer_phone=normalize($ee, $url, $error);
 
     $error = "Qualification Input Violation Error";
-    $fn =  remove_tags($qualfication);$ee= filter_string($fn);  $ee= stringLength($ee,1,50); $customer_qualfication=normalize($ee, $url, $error);
+    $fn =  remove_tags($qualification);$ee= filter_string($fn);  $ee= stringLength($ee,1,50); $customer_qualfication=normalize($ee, $url, $error);
 
-    $error = "Phone number Violation Error";
-    $phone =  remove_tags($location);$ee= filter_string($phone);  $ee= stringLength($ee,4,15); $customer_location=normalize($ee, $url, $error);
+    $error = "location  Violation Error";
+    $vv =  remove_tags($location);$ee= filter_string($vv);  $ee= stringLength($ee,2,15); $customer_location=normalize($ee, $url, $error);
 
     $type = "Workman";
+
+    $check = $mysqli->query("SELECT * FROM $tbl_temp WHERE email='$customer_email_address' AND password='$cusomer_password' ");
+    if ($check->num_rows < 1) {
 
     if($mysqli->query("INSERT INTO $tbl_temp(`email`,`name`,`phone`,`password`,`type`,`qualification`,`location`) VALUES('$customer_email_address','$customer_name','$customer_phone','$cusomer_password','$type','$customer_qualfication','$customer_location') ")){
 
@@ -178,6 +192,15 @@ if ($routes == "?customer_register") {
     $myObj->status_code = "failed to register";
     $myJSON = json_encode($myObj);
     echo $myJSON;
+    }
+    }else{
+        $myObj = new stdClass();
+        $myObj->row = null;
+        $myObj->count = null;
+        $myObj->status = null;
+        $myObj->status_code = "user already exist";
+        $myJSON = json_encode($myObj);
+        echo $myJSON;
     }
 }elseif($routes == "?customer_login") {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
