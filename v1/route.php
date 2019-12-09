@@ -22,5 +22,7 @@ define("location", "POST,location,true,admin");
 
 //general
 define("get_token", "GET,tokennizer_wocman,false,admin");
+define("get_location", "POST,location,false,all");
+define("get_qualification", "POST,qualification,false,all");
 
 
