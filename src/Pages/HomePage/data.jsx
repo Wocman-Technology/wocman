@@ -24,6 +24,12 @@ import Cart from "../../assets/cart.svg";
 import Carp from "../../assets/carp.svg";
 import Mech from "../../assets/mech.svg";
 
+// pictures for the about section
+
+import Mission from "../../assets/mission.svg";
+import Vision from "../../assets/vision.svg";
+import Story from "../../assets/story.svg";
+
 export const categories = [
   {
     id: `${FirstIcon}`,
@@ -117,5 +123,29 @@ export const onDemandJobs = [
     logo: `${Mechanic}`,
     img: `${Mech}`,
     title: "Mechanic"
+  }
+];
+
+export const aboutUs = [
+  {
+    id: `${Mission}`,
+    img: `${Mission}`,
+    title: "Our Mission",
+    desc:
+      "Wocman Technology is a people organization, helping to bridge social gaps, by connecting Africa’s informal workforce to improved economic opportunities. "
+  },
+  {
+    id: `${Vision}`,
+    img: `${Vision}`,
+    title: "Our Vision",
+    desc:
+      "To be Africa’s leading on-demand work outsourcing company, where customers can get any job done, anywhere in real-time."
+  },
+  {
+    id: `${Story}`,
+    img: `${Story}`,
+    title: "Our Story",
+    desc:
+    "Works executed on-site are done by the hands of artisans who get little credit for their work and earn very little from the use of their skills. This is the spark to our quest as change agents to help artisans and freelance professionals earn more and be appreciated for their skills, WOCMAN connects customers to nearest tradesmen and professionals to help execute domestic, construction, and repair works with just a tab on a mobile phone, WOCMAN allows customers to find the services they need, when and where they need it! We fix it!"
   }
 ];
