@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * wocman
  *
@@ -8,7 +6,6 @@
  * Author: Justice
  *
  */
-define('wocman_route', 'xma3874dsdsdAhsahsZXdfhjsd7ds7Aw2SAmnsdfjdskfj94853hhdke4es6gfsjdbkjS');
 
 //routes
 
@@ -16,9 +13,11 @@ define('wocman_route', 'xma3874dsdsdAhsahsZXdfhjsd7ds7Aw2SAmnsdfjdskfj94853hhdke
 define("workman_login", "POST,workman_login,false,all");
 define("workman_register", "POST,workman_register,false,all");
 
+
 //cusstomer route
 define("customer_register", "POST,customer_register,false,all");
 define("customer_login", "POST,customer_login,false,all");
+
 
 //admin route
 define("delete_qualification", "POST,delete_qualification,true,admin");
@@ -29,10 +28,14 @@ define("delete_location", "POST,delete_location,true,admin");
 define("update_location", "POST,update_location,true,admin");
 define("create_location", "POST,create_location,true,admin");
 define("location", "GET,location,true,admin");
+define("wocman_register", "POST,wocman_register,false,admin");
+define("wocman_login", "POST,wocman_login,false,admin");
+
 
 //general
 define("get_token", "GET,tokennizer_wocman,false,admin");
 define("get_location", "GET,location,false,all");
 define("get_qualification", "GET,qualification,false,all");
+define("logout", "GET,logout,false,all");
 
 

@@ -2,7 +2,7 @@
 
 #  getting the API documentation ready
 
-# for test
+# For Test
 
 clone this.
 
@@ -24,7 +24,8 @@ example.
 
 http://localhost/wocman/v1/?get_token
 
-# note
-some of the routes are authorized routes which needs you to pass some session values to access basically all the routes with admin and true.
+# Note
 
-to test those once, open the index.php in the v1 folder and uncomment the first 3 session variables and save the file.
+To register an admin, pass the variable called secret, along with other registration details. contact me to get this key
+
+All the admin routes needs admin to login. make sure your admin user account is logged to test the admin routes

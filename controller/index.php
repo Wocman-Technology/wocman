@@ -1,4 +1,8 @@
 <?php
+require '../database/xc4f_config.php';
+require WOCMAN_DIR.'database/'.WOCMAN_PREFIX_FILE.'mysqli.php';
+require WOCMAN_DIR.WOCMAN_PREFIX_FILE.'clean.php';
+require WOCMAN_DIR.WOCMAN_PREFIX_FILE.'function.php';
 /**
  * wocman
  *
@@ -6,21 +10,15 @@
  * Author: Justice
  *
  */
-
-require '../database/xc4f_config.php';
+define('COOKIE_FILE', 'cookie.txt');
+$_SESSION['token']  = isset($_SESSION['token'])?$_SESSION['token']:getToken(120);
 
 if (isset($_GET['wocman_route'])?$_GET['wocman_route']:'' == (string)wocman_route) {
+    //var_dump($_SESSION);
 }else{
     echo json_encode(["status" => "Invalid access"]);
     return false;
-
 }
-require WOCMAN_DIR.'database/'.WOCMAN_PREFIX_FILE.'mysqli.php';
-require WOCMAN_DIR.WOCMAN_PREFIX_FILE.'clean.php';
-require WOCMAN_DIR.WOCMAN_PREFIX_FILE.'function.php';
-
-
-$_SESSION['token']  = isset($_SESSION['token'])?$_SESSION['token']:getToken(120);
 
 
 $rout = getCurrentUri();
@@ -202,6 +200,104 @@ if ($routes == "?customer_register") {
         $myJSON = json_encode($myObj);
         echo $myJSON;
     }
+}elseif($routes == "?wocman_register") {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        
+    }else{
+        $myObj = new stdClass();
+        $myObj->row = null;
+        $myObj->count = null;
+        $myObj->status = null;
+        $myObj->status_code = null;
+        $myJSON = json_encode($myObj);
+        echo $myJSON;
+        return false;
+    }
+    extract(${"_".$_SERVER['REQUEST_METHOD']});
+        
+
+    $error = "Email Input Violation Error";
+    $email = remove_tags($email);$ee= filter_email($email);$ee= stringLength($ee,5,50);   $customer_email_address=normalize($ee, $url, $error);
+
+    $error = "Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.";
+    $psd =  remove_tags($password);$ee= filter_password($psd);   $ee= stringLength($ee,8,50);$cusomer_password=normalize($ee, $url, $error);
+
+    $error = "Name Input Violation Error";
+    $fn =  remove_tags($name);$ee= filter_string($fn);  $ee= stringLength($ee,4,50); $customer_name=normalize($ee, $url, $error);
+
+    $error = "Phone number Violation Error";
+    $phone =  remove_tags($phone);$ee= filter_string($phone);  $ee= stringLength($ee,4,15); $customer_phone=normalize($ee, $url, $error);
+
+    
+    if ($secret == wocman_public ) {
+       
+    }else{
+        $myObj = new stdClass();
+        $myObj->row = null;
+        $myObj->count = null;
+        $myObj->status = false;
+        $myObj->status_code = "Public Key Failure";
+        $myJSON = json_encode($myObj);
+        echo $myJSON;
+        return false;
+    }
+
+    $type = "Wocman";
+
+    $check = $mysqli->query("SELECT * FROM $tbl_temp WHERE email='$customer_email_address' AND password='$cusomer_password' ");
+    if ($check->num_rows < 1) {
+
+    if($mysqli->query("INSERT INTO $tbl_temp(`email`,`name`,`phone`,`password`,`type`,`qualification`,`location`) VALUES('$customer_email_address','$customer_name','$customer_phone','$cusomer_password','$type','','') ")){
+
+    //$customer_email_address = "ugbogoguJ@yahoo.com";
+    //$cusomer_password = "adfg34DFDGfgd";
+
+    $key = password_hash($cusomer_password, PASSWORD_DEFAULT);
+
+    $url_email = website_link."verify/?url=".$key.WOCMAN_SPLIT.$customer_email_address.WOCMAN_SPLIT.$type;
+    //var_dump($url_email); 
+
+    $bodyTitle = "Wocman Technology Account Confirmatoin";
+    $subject = "Workman Admin Account Confirmatoin";
+    $bodyText = '<h3>Welcome, '. $customer_name.'!</h3>
+                            We indeed are glad that you have chosen to create an account with us. Please, you have just one step to complete the process. We require our clients to validate their accounts before creation to ensure continued security.
+                            <br/>
+                            All you have to do is to click on the link below to activate your account so you get access to our numerous services.
+                            <br/>
+                            <br/>
+                            <center>
+                                <a href="'.$url_email.'"><button style="padding:10px;background-color:#022F8E;color:white;border:0px;font-family:\'Manjari\',sans-serif;outline:none;font-weight:bold">Activate Account</button></a></center>
+                            <br/>
+                            <br/>'; 
+
+    include WOCMAN_DIR."emailhandler.php";
+
+
+    $myObj = new stdClass();
+    $myObj->row = "none";
+    $myObj->count = 0;
+    $myObj->status = true;
+    $myObj->status_code = "Successful";
+    $myJSON = json_encode($myObj);
+    echo $myJSON;
+    }else{
+    $myObj = new stdClass();
+    $myObj->row = "none";
+    $myObj->count = 0;
+    $myObj->status = false;
+    $myObj->status_code = "failed to register";
+    $myJSON = json_encode($myObj);
+    echo $myJSON;
+    }
+    }else{
+        $myObj = new stdClass();
+        $myObj->row = null;
+        $myObj->count = null;
+        $myObj->status = null;
+        $myObj->status_code = "user already exist";
+        $myJSON = json_encode($myObj);
+        echo $myJSON;
+    }
 }elseif($routes == "?customer_login") {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
@@ -230,9 +326,9 @@ if ($routes == "?customer_register") {
             $myObj = new stdClass();
             $myObj->row = $row_fetch;
             $myObj->count = $check->num_rows;
-            $myObj->status = true;
+            $myObj->status = "customer_logedin";
             $myObj->status_code = 202;
-        
+            unset($_SESSION['routes_Auth_wocman_cutomer']);
             $myJSON = json_encode($myObj);
             echo $myJSON;
         }else{
@@ -283,11 +379,79 @@ if ($routes == "?customer_register") {
             $myObj = new stdClass();
             $myObj->row = $row_fetch;
             $myObj->count = $check->num_rows;
-            $myObj->status = true;
+            $myObj->status = "workman_logedin";
             $myObj->status_code = 202;
         
             $myJSON = json_encode($myObj);
             echo $myJSON;
+        }else{
+            $myObj = new stdClass();
+            $myObj->row = "none";
+            $myObj->count = 0;
+            $myObj->status = true;
+            $myObj->status_code = "Invalid Password";
+        
+            $myJSON = json_encode($myObj);
+            echo $myJSON;
+        }
+    }else{
+        $myObj = new stdClass();
+        $myObj->row = "none";
+        $myObj->count = 0;
+        $myObj->status = false;
+        $myObj->status_code = "Invalid login credentials";
+        
+        $myJSON = json_encode($myObj);
+        echo $myJSON;
+    }
+    
+}elseif($routes == "?wocman_login") {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        
+    }else{
+        $myObj = new stdClass();
+        $myObj->row = null;
+        $myObj->count = null;
+        $myObj->status = null;
+        $myObj->status_code = null;
+        $myJSON = json_encode($myObj);
+        echo $myJSON;
+        return false;
+    }
+    extract(${"_".$_SERVER['REQUEST_METHOD']});
+        $error = "Email Input Violation Error";
+    $email = remove_tags($email);$ee= filter_email($email);$ee= stringLength($ee,5,50);   $customer_email_address=normalize($ee, $url, $error);
+
+    $error = "Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.";
+    $psd =  remove_tags($password);$ee= filter_password($psd);   $ee= stringLength($ee,8,50);$cusomer_password=normalize($ee, $url, $error);
+
+     $check = $mysqli->query("SELECT * FROM $tbl_wocman WHERE email = '$customer_email_address' ");
+    if ($check->num_rows == 1) {
+        $row_fetch = $check->fetch_assoc();
+        $psd = $row_fetch['password'];
+        $secret = $row_fetch['secret_key'];
+        if (password_verify($cusomer_password, $psd) == 1) {
+            if ($secret == wocman_secret) {
+
+
+                $myObj = new stdClass();
+                $myObj->row = $row_fetch;
+                $myObj->count = $check->num_rows;
+                $myObj->status = "wocman_logedin";
+                $myObj->status_code = 202;
+               
+                $myJSON = json_encode($myObj);
+                echo $myJSON;
+            }else{
+                $myObj = new stdClass();
+                $myObj->row = false;
+                $myObj->count = false;
+                $myObj->status = false;
+                $myObj->status_code = "Authourization Failed";
+            
+                $myJSON = json_encode($myObj);
+                echo $myJSON;
+            }
         }else{
             $myObj = new stdClass();
             $myObj->row = "none";
@@ -724,11 +888,29 @@ if ($routes == "?customer_register") {
     }else{
         
     }
+
     echo json_encode(['status' => $_SESSION['token']]);
+}elseif($routes == "?logout"){
+     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $myObj = new stdClass();
+        $myObj->row = null;
+        $myObj->count = null;
+        $myObj->status = null;
+        $myObj->status_code = null;
+        $myJSON = json_encode($myObj);
+        echo $myJSON;
+        return false;
+    }else{
+        
+    }
+    session_unset();
+    session_destroy();
+    echo json_encode(['status' => "logout", 'status_code' => 'Logged out']);
 }else{  
 
     echo json_encode(["status" => null]);
     return false;
 }
+exit();
 
 ?>

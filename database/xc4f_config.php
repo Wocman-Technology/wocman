@@ -1,5 +1,7 @@
 <?php
-
+$lifetime = "60000";
+session_set_cookie_params($lifetime);
+session_start();
 /**
  * wocman
  *
@@ -8,7 +10,6 @@
  *
  */
 
-session_start();
 
 // Database information
 
@@ -18,6 +19,11 @@ define("WOCMAN_PREFIX_FILE", "xc4f_");
 define("WOCMAN_SPLIT", "xxwocmanxx");
 define('website_link', 'http://localhost/wocman/');
 define('wocman_route', 'xma3874dsdsdAhsahsZXdfhjsd7ds7Aw2SAmnsdfjdskfj94853hhdke4es6gfsjdbkjS');
+define('wocman_public', 'pub_tQWSy5678fdcvdsf434dfbvnv_woman');
+define('wocman_secret', 'sec_ty5678fdcvdsdSFGfdfbvnv_wocman');
+define('routes_Auth_wocman_admin', 'gfksfshjdnvxisdsdgrevv343432QWSDSsdfgsdfjkdfjd');
+define('routes_Auth_wocman_cutomer', 'gfksfshjdnvxisdfhsdhfjkdmbsdFDGDFHGssd42312dfsddfsdZ');
+define('routes_Auth_wocman_workman', 'gfksfshjdnv123AsdSwAQxisdfhsdhfjkdmbsdfgsdfjkdfjd');
 
 if(!defined('WOCMAN_DIR'))
 {
@@ -37,6 +43,7 @@ $tbl_qualification = WOCMAN_PREFIX."qualification";
 $tbl_location = WOCMAN_PREFIX."location";
 $tbl_category = WOCMAN_PREFIX."category";
 $tbl_work = WOCMAN_PREFIX."work";
+$tbl_wocman = WOCMAN_PREFIX."wocman";
 
 $tbl_customer_workman = WOCMAN_PREFIX."customer_workman";
 $tbl_category_workman = WOCMAN_PREFIX."category_workman";

@@ -1,5 +1,5 @@
 <?php
-
+require '../database/xc4f_config.php';
 /**
  * wocman
  *
@@ -11,19 +11,7 @@
 require 'route.php';
 
 //basics
-define("WOCMAN_PREFIX", "wokman_xcvfg67uuygh_");
-define("WOCMAN_PREFIX_FILE", "xc4f_");
-define("WOCMAN_SPLIT", "xxwocmanxx");
-define('website_link', 'http://localhost/wocman/');
-
-define('routes_Auth_wocman_admin', 'gfksfshjdnvxisdsdgrevv343432QWSDSsdfgsdfjkdfjd');
-define('routes_Auth_wocman_cutomer', 'gfksfshjdnvxisdfhsdhfjkdmbsdFDGDFHGssd42312dfsddfsdZ');
-define('routes_Auth_wocman_workman', 'gfksfshjdnv123AsdSwAQxisdfhsdhfjkdmbsdfgsdfjkdfjd');
-
-if(!defined('WOCMAN_DIR'))
-{
- define('WOCMAN_DIR', dirname(dirname(__FILE__))."/");
-}
+define('COOKIE_FILE', website_link.'cookie.txt');
 
 
 function getCurrentUri(){
@@ -48,23 +36,14 @@ if (defined(trim($_r,'?'))) {
 	$a = constant(trim($_r,'?'));
 	$x  = explode(",", $a);
 	if ($x[2] == 'true') {
-		session_start();
-
-		//test reasons, please uncomment and unset those variables after testing the auth
-		// $_SESSION['routes_Auth_wocman_cutomer'] = "gfksfshjdnvxisdfhsdhfjkdmbsdFDGDFHGssd42312dfsddfsdZ";
-		// $_SESSION['routes_Auth_wocman_admin'] = "gfksfshjdnvxisdsdgrevv343432QWSDSsdfgsdfjkdfjd";
-		// $_SESSION['routes_Auth_wocman_workman'] = "gfksfshjdnv123AsdSwAQxisdfhsdhfjkdmbsdfgsdfjkdfjd";
-		// unset($_SESSION['routes_Auth_wocman_workman']);
-		// unset($_SESSION['routes_Auth_wocman_admin']);
-		// unset($_SESSION['routes_Auth_wocman_cutomer']);
-		//end test parameters
-
+		
 		if (isset($_SESSION['routes_Auth_wocman_'.$x[3]])?$_SESSION['routes_Auth_wocman_'.$x[3]]:'' ==  constant('routes_Auth_wocman_'.$x[3])) {
 			
 		}else{
 			echo json_encode(['wocman_status' => "Auth failure",]);
 			return false;
 		}
+		
 	}
 	$wocman_route = "&wocman_route=".wocman_route;
 	$field_string = '';
@@ -77,23 +56,55 @@ if (defined(trim($_r,'?'))) {
 	array_push($push, $wocman_route);
 	rtrim($field_string, '&');
 	define("route", website_link."controller/?".$x[1].$wocman_route);
+
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, route);
 	if ($_SERVER['REQUEST_METHOD'] === 'POST' &&  trim($x[0]) === $_SERVER['REQUEST_METHOD']) {
 		curl_setopt($ch, CURLOPT_POST, count($push));
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $field_string);
+		curl_setopt($ch, CURLOPT_COOKIEJAR, COOKIE_FILE);
+		curl_setopt($ch, CURLOPT_COOKIEFILE, COOKIE_FILE);
+		 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		// curl_setopt($ch, CURLOPT_HEADER, true);
 		$result = curl_exec($ch);
+		curl_setopt($ch, CURLOPT_COOKIESESSION, true);
 		curl_close($ch);
+		echo $result;
+		$check = (array)json_decode($result);
+		if (isset($check['status'])?$check['status']:'' == "wocman_logedin") {
+			$_SESSION['routes_Auth_wocman_admin'] = routes_Auth_wocman_admin;
+		}
+		if (isset($check['status'])?$check['status']:'' == "customer_logedin") {
+			$_SESSION['routes_Auth_wocman_cutomer'] = routes_Auth_wocman_cutomer;
+		}
+		if (isset($check['status'])?$check['status']:'' == "workman_logedin") {
+			$_SESSION['routes_Auth_wocman_workman'] = routes_Auth_wocman_workman;
+		}
+
 	}elseif($_SERVER['REQUEST_METHOD'] === 'GET' &&  trim($x[0]) === $_SERVER['REQUEST_METHOD']){
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_TIMEOUT, 3);
+		curl_setopt($ch, CURLOPT_COOKIESESSION, true);
+		curl_setopt($ch, CURLOPT_COOKIEJAR, COOKIE_FILE);
+		curl_setopt($ch, CURLOPT_COOKIEFILE, COOKIE_FILE);
+		// curl_setopt($ch, CURLOPT_HEADER, true);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		$result = curl_exec($ch);
 		curl_close($ch);
 		echo $result;
+		$check = (array)json_decode($result);
+		if (isset($check['status'])?$check['status']:'' == "logout") {
+			unset($_SESSION['routes_Auth_wocman_admin']);
+			unset($_SESSION['routes_Auth_wocman_cutomer']);
+			unset($_SESSION['routes_Auth_wocman_workman']);
+		}
+		
 	}else{
 		echo json_encode(['wocman_status' => "Invalid route",]);
 	}
 }else{
 	echo json_encode(['wocman_status' => "Route Does Not Exist",]);
 }
+
+
+
 ?>

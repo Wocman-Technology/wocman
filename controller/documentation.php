@@ -1,4 +1,13 @@
 <?php
+/**
+ * wocman
+ *
+ * Details: This file is part of the wocman technology file
+ * Author: Justice
+ *
+ */
+
+ 
 header("location:../");
 die();
 
@@ -224,5 +233,99 @@ die();
 // 			"status":true,
 // 			"status_code":"No data found from the table"
 // 		}
+
+// 		//_____________________________________________________________________________________________
+
+
+// 		//GET
+// 		http://localhost/wocman/v1/?logout
+
+// 		//PARAMETERS
+
+// 		{
+
+// 		}
+
+// 		//RESPONSE
+
+// 		//success
+
+// 		{
+// 			"status":"logout",
+//			//"status_code":"Logged out"
+// 		}
+
+			
+
+
+			//ADMIN
+
+
+
+
+// 		//_____________________________________________________________________________________________
+
+
+// 		//POST
+// 		http://localhost/wocman/v1/?wocman_login
+
+// 		//PARAMETERS
+
+// 		{
+			//'email' : "justice@gmail.com",
+// 			'password' : "Password@1",
+// 		}
+
+// 		//RESPONSE
+
+// 		//success
+
+// 		{
+// 			"row":
+				// {
+				// 	"id":"1",
+				// 	"email":"justccice@gmail.com",
+				// 	"name":"Justice George",
+				// 	"phone":"08138184872",
+				// 	"password":"$2y$10$hms.druLehfo3yU6bKSc6ubDjWr74ansE2LGHS6mgrHMqs7ei5gGi",
+				// 	"image":null,
+				// 	"location":"",
+				// 	"secret_key":"sec_ty5678fdcvdsdSFGfdfbvnv_wocman",
+				// 	"date":"2019-12-10 01:07:57"
+				// },
+				// "count":1,
+				// "status":"wocman_logedin",
+				// "status_code":202
+// 		}
+
+
+
+
+// 		//_____________________________________________________________________________________________
+
+// 		//POST
+// 		http://localhost/wocman/v1/?wocman_register
+
+// 		//PARAMETERS
+// 		{
+// 			'email' : "justice@gmail.com",
+// 			'password' : "Password@1",
+// 			'name' : "Justice George",
+// 			'phone' : "08138184872",
+//			'secret' : "pub_tQWSy5678fdcvdsf434dfbvnv_woman"
+// 		}
+		
+// 		//RESPONSE
+
+// 		//success
+// 		{
+// 			"row":"none",
+// 			"count":0,
+// 			"status":true,
+// 			"status_code":"Successful"
+// 		}
+
+// 		//email confirm link sample
+// 		http://localhost/wocman/verify/?url=$2y$10$g/BqG/eJQ0HR2HEkkoZG4eBbZ9Swv4fEHRdG/T6IU32hG4x2ot1iWxxwocmanxxjustccice@gmmail.comxxwocmanxxWocman'
 	
 ?>

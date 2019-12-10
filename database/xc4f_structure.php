@@ -57,6 +57,21 @@ $exec_workmen= "CREATE TABLE IF NOT EXISTS `$tbl_workmen` (
   ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1";
 $mysqli->query($exec_workmen);
 
+$exec_workmen= "CREATE TABLE IF NOT EXISTS `$tbl_wocman` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `email` varchar(225) NOT NULL,
+    `name` varchar(225) NOT NULL,
+    `phone` varchar(225) NOT NULL,
+    `password` varchar(225) NOT NULL,
+    `image` varchar(225)  NULL,
+    `location` varchar(225) NOT NULL,
+    `secret_key` varchar(225) NOT NULL,
+    `date` timestamp,
+    PRIMARY KEY (`id`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1";
+$mysqli->query($exec_workmen);
+
+
 $exec_qualification = "CREATE TABLE IF NOT EXISTS `$tbl_qualification` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `title` varchar(225) NOT NULL,
