@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import HeaderImage from "../../assets/header.svg";
 
 export const HeaderWrapper = styled.header`
-  background-image: ${(props => `url(${props.image})`)};
+  background-image: ${props =>  props.header ? `linear-gradient(0deg, rgba(85, 45, 30, 0.7), rgba(85, 45, 30, 0.7)), url(${props.image})` : `url(${props.image})`};
   background-position: center center;
   background-repeat: no-repeat;
   object-fit: cover;

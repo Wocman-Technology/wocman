@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 import {CustomButton} from '../../custom-button/custom-button.component'
 
-import Customer from '../../../assets/customer.svg'
-import Wocman from '../../../assets/wocman.svg'
+import Customer from '../../../assets/customer.jpg'
+import Wocman from '../../../assets/wocman.jpg'
 
 
 export const RegistrationPanelWrapper = styled.section`

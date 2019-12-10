@@ -14,21 +14,21 @@ import ThirdJob from "../../assets/third-job.svg";
 // On Demand Jobs
 
 // Regukar sized pictures
-import Carterer from "../../assets/caterer.svg";
+import Carterer from "../../assets/carterer.svg";
 import Carpenter from "../../assets/carpenter.svg";
 import Mechanic from "../../assets/mechanic.svg";
 
 // Mini pictures
 
-import Cart from "../../assets/cart.svg";
-import Carp from "../../assets/carp.svg";
-import Mech from "../../assets/mech.svg";
+import Cart from "../../assets/cart.jpg";
+import Carp from "../../assets/carp.jpg";
+import Mech from "../../assets/mech.jpg";
 
 // pictures for the about section
 
-import Mission from "../../assets/mission.svg";
-import Vision from "../../assets/vision.svg";
-import Story from "../../assets/story.svg";
+import Mission from "../../assets/mission.jpg";
+import Vision from "../../assets/vision.jpg";
+import Story from "../../assets/story.jpg";
 
 export const categories = [
   {
@@ -146,6 +146,6 @@ export const aboutUs = [
     img: `${Story}`,
     title: "Our Story",
     desc:
-    "Works executed on-site are done by the hands of artisans who get little credit for their work and earn very little from the use of their skills. This is the spark to our quest as change agents to help artisans and freelance professionals earn more and be appreciated for their skills, WOCMAN connects customers to nearest tradesmen and professionals to help execute domestic, construction, and repair works with just a tab on a mobile phone, WOCMAN allows customers to find the services they need, when and where they need it! We fix it!"
+      "Works executed on-site are done by the hands of artisans who get little credit for their work and earn very little from the use of their skills. This is the spark to our quest as change agents to help artisans and freelance professionals earn more and be appreciated for their skills, WOCMAN connects customers to nearest tradesmen and professionals to help execute domestic, construction, and repair works with just a tab on a mobile phone, WOCMAN allows customers to find the services they need, when and where they need it! We fix it!"
   }
 ];

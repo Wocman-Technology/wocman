@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Advisory from '../../../assets/advisory.svg'
+import Advisory from '../../../assets/advisory.jpg'
 
 export const AdvisoryWrapper = styled.article`
 

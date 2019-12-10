@@ -6,7 +6,7 @@ import {AboutUsSection} from '../../components/about-us-component/about-section/
 import {Advisory} from '../../components/about-us-component/advisory/advisory.component'
 import {Team} from '../../components/about-us-component/team/team.component'
 import {AboutUsHeaderWrapper} from './about-us.styles'
-import HeaderImage from '../../assets/about-us.svg'
+import HeaderImage from '../../assets/about-us.jpg'
 
 
 export const AboutUs = () => (

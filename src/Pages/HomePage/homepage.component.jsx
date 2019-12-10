@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {Header} from '../../components/header/header.component';
-import  HeaderImage from '../../assets/header.svg'
+import  HeaderImage from '../../assets/header.jpg'
 import {HeaderForm} from '../../components/homepage-component/header-form/header-form.component'
 import {NavBar} from '../../components/navbar/navbar.component'
 import {PopularCategories} from '../../components/homepage-component/popular-categories/popular-categories.component'
@@ -13,7 +13,7 @@ import {NewsLetter} from "../../components/newsletter/newsletter.component"
 
 export const HomePage = () => (
     <>
-    <Header image={HeaderImage}>
+    <Header image={HeaderImage} header>
         <NavBar/>
         <div className="landingwords">
         <h2>Get trusted skilled men and professionals from wocman</h2>
