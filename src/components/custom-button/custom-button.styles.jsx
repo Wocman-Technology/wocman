@@ -49,6 +49,6 @@ export const ButtonWrapper = styled.button`
   display: flex;
   justify-content: center;
   ${getButtonStyles}
-  border: ${props => props.regular ? "1px solid #552D1E" : "1px solid #FFF5EE"};
+  border: ${props => props.regular ? "1px solid #552D1E" : "1px solid #FFF5EE"}
 
 `

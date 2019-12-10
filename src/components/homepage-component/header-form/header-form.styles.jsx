@@ -24,6 +24,10 @@ export const FormOuterWrapper = styled.div`
   @media (max-width: 900px) {
         display: none;
     }
+    
+    @media (width: 1024px) {
+        display: none;
+    }
 
 `
 
@@ -36,15 +40,17 @@ export const FormWrapper = styled.div`
     grid-gap: 0;
     padding: 20px 35px;
     justify-content: space-evenly;
-    background: #FFFFFF !important;
+    background: ${props => props.customer ? "#552D1E !important" : "#FFFFFF !important"};
     align-content: center;
     padding: 30px 0 0 10px;
     left: calc(100% - 88vw);
     top: calc(100% - 10vh);
     margin: 0 0 5rem 0;
-    color: #552D1E !important;
+    color: ${props => props.customer ? "#FFFFFF !important" : "#552D1E !important"};
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0px 10px 10px 10px;
+
+    
 
     @media (width: 1024px) {
     left: calc(100% - 88vw);
@@ -63,6 +69,6 @@ export const FormWrapper = styled.div`
 
 export const JoinButton = styled(CustomButton)`
         width: 50%; 
-        margin: 0 auto;
+        margin:  ${props => props.inverted ? "0 auto 2rem 120%" : "0 auto 2rem;"};
         font-size: 0.9rem;
 `

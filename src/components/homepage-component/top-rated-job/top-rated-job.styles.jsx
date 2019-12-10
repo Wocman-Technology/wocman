@@ -1,5 +1,5 @@
 import styled from 'styled-components'; 
-import {MDBCard, MDBCardImage, MDBCardText} from 'mdbreact';
+import {MDBCard, MDBCardImage} from 'mdbreact';
 import {CustomButton} from '../../custom-button/custom-button.component'
 
 export const TopRatedJobWrapper = styled.article`
@@ -51,6 +51,9 @@ left: 0;
 width: 200px;
 `
 
-export const ListWrapper = styled(MDBCardText)`
+export const ListWrapper = styled.div`
     margin: 1.5rem 0 !important;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #747373;
 `
