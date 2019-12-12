@@ -12,7 +12,7 @@ export const FormOuterWrapper = styled.div`
     position: relative;
     margin: 0 auto;
     margin-bottom: -5rem;
-    margin-left: -0.9rem;
+    margin-left: -0.1%;
     padding: 0;
 
     button {
