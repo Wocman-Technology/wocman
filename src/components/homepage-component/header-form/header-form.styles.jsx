@@ -4,7 +4,7 @@ import {CustomButton} from '../../custom-button/custom-button.component'
 
 export const FormOuterWrapper = styled.div`
     z-index: 3;
-    margin-top: 35vh;
+    margin-top: 18%;
 
     .header-button {
     display: flex;
@@ -37,8 +37,6 @@ export const FormWrapper = styled.div`
     z-index: 3;
     display: grid;
     grid-template-columns: repeat(3, 32%);
-    grid-gap: 0;
-    padding: 20px 35px;
     justify-content: space-evenly;
     background: ${props => props.customer ? "#552D1E !important" : "#FFFFFF !important"};
     align-content: center;
