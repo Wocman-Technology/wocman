@@ -66,7 +66,7 @@ export const NewsLetterWrapper = styled.div`
         display: flex;
         flex-direction: column;
         input {
-            width: 250px;
+            width: 200px;
             display: block;
             margin: 0 auto;
             margin-bottom: 1.8rem;

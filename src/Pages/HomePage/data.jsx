@@ -30,6 +30,23 @@ import Mission from "../../assets/mission.jpg";
 import Vision from "../../assets/vision.jpg";
 import Story from "../../assets/story.jpg";
 
+// Why Choose Us
+
+import Smart from "../../assets/smart.jpg";
+import Trusted from "../../assets/trusted.jpg";
+import Safe from "../../assets/safe.jpg";
+
+// Our Featured Services
+
+import MakeUp from "../../assets/makeup.svg";
+import Plumbing from "../../assets/plumbing.svg";
+import Architecture from "../../assets/architecture.svg";
+import Carpentry from "../../assets/carpentry.svg";
+import HairStyling from "../../assets/hairstyling.svg";
+import Survey from "../../assets/survey.svg";
+import SoilEvaluation from "../../assets/soil-evaluation.svg";
+import Electrical from "../../assets/electrical.svg";
+
 export const categories = [
   {
     id: `${FirstIcon}`,
@@ -147,5 +164,72 @@ export const aboutUs = [
     title: "Our Story",
     desc:
       "Works executed on-site are done by the hands of artisans who get little credit for their work and earn very little from the use of their skills. This is the spark to our quest as change agents to help artisans and freelance professionals earn more and be appreciated for their skills, WOCMAN connects customers to nearest tradesmen and professionals to help execute domestic, construction, and repair works with just a tab on a mobile phone, WOCMAN allows customers to find the services they need, when and where they need it! We fix it!"
+  }
+];
+
+export const whyChooseUs = [
+  {
+    id: `${Smart}`,
+    img: `${Smart}`,
+    title: "Smart",
+    desc:
+      "With wocman you can get any job done from any location,track your wocman and  know the exact work duration."
+  },
+  {
+    id: `${Trusted}`,
+    img: `${Trusted}`,
+    title: "Trusted",
+    desc:
+      "At wocman trust is our keyword, our work-partners are carefully sourced from reputable institutions and associations of tradesmen and professionals."
+  },
+  {
+    id: `${Safe}`,
+    img: `${Safe}`,
+    title: "Safe",
+    desc:
+      "When it comes to safety at wocman it is our culture, your works and space are guaranteed with us."
+  }
+];
+
+export const ourFeaturedServices = [
+  {
+    id: `${MakeUp}`,
+    img: `${MakeUp}`,
+    title: `MakeUp`
+  },
+  {
+    id: `${Plumbing}`,
+    img: `${Plumbing}`,
+    title: `Plumbing`
+  },
+  {
+    id: `${Architecture}`,
+    img: `${Architecture}`,
+    title: `Architecture`
+  },
+  {
+    id: `${Carpentry}`,
+    img: `${Carpentry}`,
+    title: `Carpentry`
+  },
+  {
+    id: `${HairStyling}`,
+    img: `${HairStyling}`,
+    title: `HairStyling`
+  },
+  {
+    id: `${Survey}`,
+    img: `${Survey}`,
+    title: `Survey`
+  },
+  {
+    id: `${SoilEvaluation}`,
+    img: `${SoilEvaluation}`,
+    title: `Soil Evaluation`
+  },
+  {
+    id: `${Electrical}`,
+    img: `${Electrical}`,
+    title: `Electrical`
   }
 ];

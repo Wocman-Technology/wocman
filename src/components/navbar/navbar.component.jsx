@@ -37,7 +37,7 @@ export const NavBar = () => {
                 <MDBNavLink to="#!">Product</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink to="#!">Services</MDBNavLink>
+                <MDBNavLink to="/services">Services</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
                 <MDBNavLink to="#!">Contact Us</MDBNavLink>

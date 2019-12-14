@@ -7,3 +7,11 @@ body {
   letter-spacing: 0.5px;
   scroll-behavior: smooth;
 }
+  h2.featured {
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 140.62%;
+  text-align: center;
+  color: #552D1E;
+  margin-bottom: 5rem;
+}

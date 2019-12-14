@@ -30,7 +30,7 @@ export const Footer = () => {
             <hr className="w-100 clearfix d-md-none" />
             <MDBCol md="2" lg="2" xl="2" className="mx-auto mt-3">
               <p>
-                <a href="#!">Our Services</a>
+              <Link to="/services">Our Services</Link>
               </p>
               <p>
                 <a href="#!">Our Products</a>
