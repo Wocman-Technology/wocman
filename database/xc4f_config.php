@@ -49,6 +49,8 @@ $tbl_customer_workman = WOCMAN_PREFIX."customer_workman";
 $tbl_category_workman = WOCMAN_PREFIX."category_workman";
 
 
+$tbl_updater = WOCMAN_PREFIX."wocman_queries";
+
 $link = new mysqli($host,$user,$pass);
 if (!$link) {
 	die('Could not connect: ' . mysqli_error($link));
@@ -99,5 +101,28 @@ if (!$db_selected) {
 	$_SESSION['mysqli']=$mysqli;
 
 }
+
+$exec_updater = "CREATE TABLE IF NOT EXISTS `$tbl_updater` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `title` varchar(225) NOT NULL,
+    `query` text NOT NULL,
+    `date` timestamp,
+    PRIMARY KEY (`id`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1";
+$mysqli->query($exec_updater);
+
+$queries = array(
+	'query_oo1' => 'CREATE TABLE IF NOT EXISTS '.$tbl_wocman.' (`id` int(11) UNSIGNED AUTO_INCREMENT,`email` varchar(225) NOT NULL,`name` varchar(225) NOT NULL,`phone` varchar(225) NOT NULL,`password` varchar(225) NOT NULL,`image` varchar(225)  NULL,`location` varchar(225) NOT NULL,`secret_key` varchar(225) NOT NULL,`date` timestamp,PRIMARY KEY (`id`)) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1'
+);
+
+foreach ($queries as $key => $value) {
+	
+	$search_query = $mysqli->query("SELECT * FROM `$tbl_updater` WHERE `title` = '$key' ");
+	if ($search_query->num_rows < 1) {
+		$mysqli->query($value);
+		$mysqli->query("INSERT INTO `$tbl_updater`(`title`, `query`) VALUES('$key', '$value') ");
+	}
+}
+
 
 ?>

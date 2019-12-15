@@ -473,6 +473,62 @@ if ($routes == "?customer_register") {
         echo $myJSON;
     }
     
+}elseif($routes == "?workman_upload") {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        
+    }else{
+        $myObj = new stdClass();
+        $myObj->row = null;
+        $myObj->count = null;
+        $myObj->status = null;
+        $myObj->status_code = null;
+        $myJSON = json_encode($myObj);
+        echo $myJSON;
+        return false;
+    }
+    extract(${"_".$_SERVER['REQUEST_METHOD']});
+        if (routes_Auth_wocman_workman) {
+            $workman_id = $workman_id;
+              $image[] = $_FILES['certificate'];
+              $target_dir = "../uploads/workman_qualification/";
+              $size = 2000000;
+              $extentions = ['jpg','png','jpeg','pdf',];
+              $newimage = getToken(12);
+              $url = '';
+              $image = image($image[0]['name'],$image[0]['type'],$image[0]['tmp_name'],$image[0]['error'],$image[0]['size'],$target_dir,$size,$extentions,$newimage);
+              if (!empty($image) AND trim($image) != 'error') {
+                 compress_image($image, $image, 90);
+                  $image = str_replace('../', '', $image);
+                  $mysqli->query("UPDATE $tbl_workmen SET `qualification` = '$image' WHERE `id` = '$workman_id' ");
+                    $myObj = new stdClass();
+                    $myObj->row = 'none';
+                    $myObj->count = 'nono';
+                    $myObj->status = true;
+                    $myObj->status_code = "Uploaded Successfully";
+                   
+                    $myJSON = json_encode($myObj);
+                    echo $myJSON;
+              }else{
+
+                    $myObj = new stdClass();
+                    $myObj->row = "none";
+                    $myObj->count = 0;
+                    $myObj->status = false;
+                    $myObj->status_code = "Invalid file type";
+                    
+                    $myJSON = json_encode($myObj);
+                    echo $myJSON;
+              }
+        }else{
+            $myObj = new stdClass();
+            $myObj->row = "none";
+            $myObj->count = 0;
+            $myObj->status = false;
+            $myObj->status_code = "Invalid login credentials";
+            
+            $myJSON = json_encode($myObj);
+            echo $myJSON;
+        }
 }elseif($routes == "?delete_qualification") {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         

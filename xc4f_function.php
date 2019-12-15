@@ -89,6 +89,36 @@ function image($name,$type,$temp_name,$error,$imagesize,$target_dir,$size,$exten
     }
 }
 
+function mergeOptions($option,$merge){
+    $_SESSION['get'] = 0;
+    foreach ($merge as $set) {
+        
+        if($option != $set){
+            $_SESSION['get'] = $_SESSION['get'] + 0;
+        }else{
+            $_SESSION['get'] = $_SESSION['get'] + 1;
+        }
+
+    }
+    if($_SESSION['get'] > 0){
+        return $option;
+    }else{
+        return "error";
+    }
+}
+  function compress_image($source, $destination, $quality){
+        $info = getimagesize($source);
+        if ($info['mime'] == 'image/jpeg') {
+          $image = imagecreatefromjpeg($source);
+        }elseif ($info['mime'] == 'image/gif') {
+          $image = imagecreatefromgif($source);
+        }elseif ($info['mime'] == 'image/png') {
+          $image = imagecreatefrompng($source);
+        }
+        imagejpeg($image, $destination, $quality);
+
+        return $destination;
+    }
 function route($method,$url,$name){
     if (trim($url,"?") == $name) {
         

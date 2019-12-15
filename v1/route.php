@@ -12,11 +12,13 @@
 //workman route
 define("workman_login", "POST,workman_login,false,all");
 define("workman_register", "POST,workman_register,false,all");
+define("workman_upload", "POST,workman_upload,false,all");
 
 
 //cusstomer route
 define("customer_register", "POST,customer_register,false,all");
 define("customer_login", "POST,customer_login,false,all");
+
 
 
 //admin route
