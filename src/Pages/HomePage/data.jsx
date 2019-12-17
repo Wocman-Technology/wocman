@@ -47,6 +47,16 @@ import Survey from "../../assets/survey.svg";
 import SoilEvaluation from "../../assets/soil-evaluation.svg";
 import Electrical from "../../assets/electrical.svg";
 
+
+// At your service 
+
+import ElectricalFittings from '../../assets/electrical-fittings.jpg'
+import InteriorFittings from '../../assets/interior-fittings.jpg'
+import GeneratorRepairs from '../../assets/generator-repairs.jpg'
+import PaintingService from '../../assets/painting-service.jpg'
+import GardeningService from '../../assets/gardening-service.jpg'
+import CleaningService from '../../assets/cleaning-service.jpg'
+
 export const categories = [
   {
     id: `${FirstIcon}`,
@@ -233,3 +243,43 @@ export const ourFeaturedServices = [
     title: `Electrical`
   }
 ];
+
+
+export const atYourService = [
+  {
+    id: `${ElectricalFittings}`,
+    img: `${ElectricalFittings}`,
+    title: "Electrical Fittings",
+    desc: "As a holiday destination, Lisbon offers a rich and varied history"
+  },
+  {
+    id: `${InteriorFittings}`,
+    img: `${InteriorFittings}`,
+    title: "Interior Fittings",
+    desc: "One of the most beautiful cities and center of Italian Renaissance."
+  },
+  {
+    id: `${GeneratorRepairs}`,
+    img: `${GeneratorRepairs}`,
+    title: "Generator Repairs",
+    desc: "Modern skyscrapers, high-tech subways and pop culture meet"
+  },
+  {
+    id: `${PaintingService}`,
+    img: `${PaintingService}`,
+    title: "Painting Service",
+    desc: "Aboramatic landscape with amazing experiences in the city"
+  },
+  {
+    id: `${GardeningService}`,
+    img: `${GardeningService}`,
+    title: "Gardening Service",
+    desc: "One of the principal civilizations of the ancient Middle East"
+  },
+  {
+    id: `${CleaningService}`,
+    img: `${CleaningService}`,
+    title: "Cleaning Service",
+    desc: "A global center for art, fashion, gastronomy and culture"
+  },
+]
