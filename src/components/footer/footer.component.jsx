@@ -50,17 +50,17 @@ export const Footer = () => {
               <h6 className="text-uppercase mb-4 font-weight-bold">Contact</h6>
               <p>
                 <i className="fa fa-home mr-3" />
-                Ikoyi, Lagos
+                17 Akinsanya street Ojodu Berger, Lagos state
               </p>
               <p>
-                <i className="fa fa-envelope mr-3" /> info@gmail.com
+                <i className="fa fa-envelope mr-3" /> hello@wocmantech.com
               </p>
               <p>
-                <i className="fa fa-phone mr-3" /> + 01 234 567 88
+                <i className="fa fa-phone mr-3" /> +2348155419648
               </p>
-              <p>
+              {/* <p>
                 <i className="fa fa-print mr-3" /> + 01 234 567 89
-              </p>
+              </p> */}
             </MDBCol>
           </MDBRow>
           <hr />

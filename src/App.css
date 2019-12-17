@@ -16,6 +16,6 @@ body {
   margin-bottom: 5rem;
 }
 
-button {
-  outline: none;
+* button {
+  outline: none !important;
 }
