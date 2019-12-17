@@ -45,10 +45,9 @@ export const ButtonWrapper = styled.div`
 
     display: grid;
     max-width: 100% !important;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 250px 250px;
     grid-gap: 1rem;
     button:first-child {
-            min-width: 90%;
             min-height: 40px !important;
             text-align: center;
             padding-top: 8px !important;
@@ -66,7 +65,6 @@ export const ButtonWrapper = styled.div`
           }
 
     button:not(:first-child) {
-          min-width: 90%;
           min-height: 40px !important;
           text-align: center;
           padding-top: 8px !important;
