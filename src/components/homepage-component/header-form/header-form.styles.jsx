@@ -3,7 +3,7 @@ import { CustomButton } from "../../custom-button/custom-button.component";
 
 export const FormOuterWrapper = styled.div`
   z-index: 3;
-  margin-top: 14%;
+  margin-top: 35vh;
 
   .header-button {
     display: flex;
