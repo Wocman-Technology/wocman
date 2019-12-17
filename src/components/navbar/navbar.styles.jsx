@@ -12,8 +12,9 @@ export const NavWrapper = styled.nav`
 
     img {
       display: block;
+      height: 90%;
       position: absolute;
-      top: 0rem;
+      top: 0.2rem;
       left: 5rem;
     }
     ul:nth-child(1) {
