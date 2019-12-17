@@ -1,6 +1,6 @@
 
 body {
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,4 +14,8 @@ body {
   text-align: center;
   color: #552D1E;
   margin-bottom: 5rem;
+}
+
+button {
+  outline: none;
 }
