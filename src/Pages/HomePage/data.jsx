@@ -115,7 +115,7 @@ export const topJobs = [
     bullets: [
       "Seal consumables",
       "Alternative lodging",
-      "Open all doors",
+      "Open all doors for wocmen",
       "Give free access"
     ]
   },

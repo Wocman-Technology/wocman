@@ -18,7 +18,7 @@ export const Footer = () => {
               </div>
             </MDBCol>
             <hr className="w-100 clearfix d-md-none" />
-            <MDBCol md="2" lg="2" xl="2" className="mx-auto mt-3">
+            <MDBCol md="2" lg="3" xl="3" className="mx-auto mt-3">
               <h6 className="text-uppercase mb-4 font-weight-bold">POLICY</h6>
               <p>
                 <a href="#!">Terms & Conditions</a>
@@ -28,23 +28,28 @@ export const Footer = () => {
               </p>
             </MDBCol>
             <hr className="w-100 clearfix d-md-none" />
-            <MDBCol md="2" lg="2" xl="2" className="mx-auto mt-3">
+            <MDBCol md="2" lg="3" xl="3" className="mx-auto mt-3">
+              <h6 className="text-uppercase mb-4 font-weight-bold">PAGES</h6>
               <p>
               <Link to="/services">Our Services</Link>
               </p>
-              <p>
-                <a href="#!">Our Products</a>
-              </p>
-            </MDBCol>
-            <hr className="w-100 clearfix d-md-none" />
-            <MDBCol md="2" lg="2" xl="2" className="mx-auto mt-3">
-              <p>
+               <p>
                 <Link to="/about">About us</Link>
               </p>
+               <p>
+                <Link to="/contact">Contact us</Link>
+              </p>
+              {/* <p>
+                <a href="#!">Our Products</a>
+              </p> */}
+            </MDBCol>
+            {/* <hr className="w-100 clearfix d-md-none" />
+            <MDBCol md="2" lg="2" xl="2" className="mx-auto mt-3">
+             
               <p>
                 <a href="#!">How it works</a>
               </p>
-            </MDBCol>
+            </MDBCol> */}
             <hr className="w-100 clearfix d-md-none" />
             <MDBCol md="4" lg="3" xl="3" className="mx-auto mt-3">
               <h6 className="text-uppercase mb-4 font-weight-bold">Contact</h6>
@@ -71,7 +76,7 @@ export const Footer = () => {
                 <span>All Rights Reserved</span>
               </p>
             </MDBCol>
-            <MDBCol md="4" lg="4" className="ml-lg-0">
+            <MDBCol md="4" lg="4" className="ml-lg-0 mt-3">
               <div className="text-center text-md-right">
                 <ul className="list-unstyled list-inline">
                   <li className="list-inline-item">
@@ -91,7 +96,7 @@ export const Footer = () => {
                   </li>
                   <li className="list-inline-item">
                     <a className="btn-floating btn-sm rgba-white-slight mx-1">
-                      <i className="fab fa-github" />
+                      <i className="fab fa-linkedin" />
                     </a>
                   </li>
                 </ul>

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from "google-maps-react";
-import Address from "../../assets/address.svg";
-import Phone from "../../assets/phone.svg";
-import Envelope from "../../assets/envelope.svg";
+import Address from "../../../assets/address.svg";
+import Phone from "../../../assets/phone.svg";
+import Envelope from "../../../assets/envelope.svg";
 import styled from "styled-components";
 
 const Styles = styled.div`
@@ -33,6 +33,7 @@ const Styles = styled.div`
         width: 100%;
         padding: 1rem;
         height: 33%;
+        justify-content: flex-start;
       }
       span {
         img {

@@ -11,7 +11,7 @@ export const HeaderWrapper = styled.header`
   width: 100%;
 
   @media (max-width: 767px) {
-    height: 80vh;
+    height: 85vh;
   }
 
   @media (width: 768px){
@@ -23,13 +23,13 @@ export const HeaderWrapper = styled.header`
   }
 
   .landingwords {
-    display: block;
     text-align: center;
     word-break: normal;
     padding: auto;
     width: 50%;
-    margin: 0 auto;
-    margin-top: 10vw;
+    margin: auto;
+    vertical-align: middle;
+    margin-top: ${props => props.header ? "15vw" : "10vw"};
     color: white;
 
     h2 {
@@ -52,6 +52,7 @@ export const HeaderWrapper = styled.header`
       font-weight: 500;
       font-size: 1.5rem;
       line-height: 180%;
+      margin-top: 3rem;
       /* or 40px */
 
       /* display: flex; */
@@ -92,13 +93,12 @@ export const HeaderWrapper = styled.header`
 
   @media (max-width: 768px) {
     .landingwords {
-      display: block;
       text-align: center;
       word-break: normal;
       width: 100%;
       padding: 2rem;
       margin: auto;
-      margin-top: 10vw;
+      margin-top: 15vw;
       color: white;
       h2 {
         font-size: 2.5rem;
