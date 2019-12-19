@@ -3,16 +3,18 @@ import { CustomButton } from "../../custom-button/custom-button.component";
 
 export const FormOuterWrapper = styled.div`
   z-index: 3;
-  margin-top: 23vh;
+  margin-top: 50px;
 
   .header-button {
     display: flex;
     width: 80%;
     position: relative;
     margin: 0 auto;
-    margin-bottom: -5rem;
-    margin-left: -0.1%;
     padding: 0;
+    @media (width: 1024px) {
+    margin: 0 auto;
+    }
+
 
     button {
       font-size: 0.7rem;
@@ -25,13 +27,22 @@ export const FormOuterWrapper = styled.div`
   }
 
   @media (width: 1024px) {
-    display: none;
+    display: flex;
+    position: static;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20vh;
+    justify-content: center;
+    height: 150px;
+  }
+
+  @media (min-width: 1200px){
+     margin-top: 110px;
   }
 `;
 
 export const FormWrapper = styled.div`
   width: 80%;
-  position: relative;
   z-index: 3;
   display: grid;
   grid-template-columns: repeat(3, 32%);
@@ -40,24 +51,18 @@ export const FormWrapper = styled.div`
     props.customer ? "#552D1E !important" : "#FFFFFF !important"};
   align-content: center;
   padding: 30px 0 0 10px;
-  left: calc(100% - 88vw);
-  top: calc(100% - 10vh);
-  margin: 0 0 5rem 0;
+  margin: 0 auto;
   color: ${props =>
     props.customer ? "#FFFFFF !important" : "#552D1E !important"};
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px 10px 10px 10px;
 
   @media (width: 1024px) {
-    left: calc(100% - 88vw);
-    top: 45.6rem;
+    margin: 0 auto;
+    width: 80%;
   }
 
   @media (max-width: 900px) {
-    display: none;
-  }
-
-  @media (width: 1024px) {
     display: none;
   }
 `;

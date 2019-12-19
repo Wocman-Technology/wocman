@@ -1,7 +1,6 @@
 import React from "react";
 
-import { NewsLetterWrapper } from "./newsletter.styles";
-import { CustomButton } from "../custom-button/custom-button.component";
+import { NewsLetterWrapper, ButtonWrapper } from "./newsletter.styles";
 
 export const NewsLetter = () => (
   <NewsLetterWrapper>
@@ -13,7 +12,7 @@ export const NewsLetter = () => (
     </div>
     <div>
       <input type="text" placeholder="Email address" />
-      <CustomButton>Save Me</CustomButton>
+      <ButtonWrapper>Save Me</ButtonWrapper>
     </div>
   </NewsLetterWrapper>
 );

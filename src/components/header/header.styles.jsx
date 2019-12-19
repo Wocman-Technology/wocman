@@ -13,16 +13,8 @@ export const HeaderWrapper = styled.header`
   height: 100vh;
   width: 100%;
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     height: 85vh;
-  }
-
-  @media (width: 768px) {
-    height: 50vh;
-  }
-
-  @media (width: 1024px) {
-    height: 50vh;
   }
 
   .landingwords {
@@ -63,34 +55,6 @@ export const HeaderWrapper = styled.header`
       text-align: center;
 
       color: #ffffff;
-    }
-  }
-
-  .header-button {
-    display: flex;
-    width: 80%;
-    position: absolute;
-    margin: auto;
-    bottom: 5rem;
-    left: 10.52rem;
-    padding: 0;
-
-    button {
-      font-size: 0.7rem;
-      border: none !important;
-    }
-
-    @media (max-width: 1125px) {
-      left: 8.4rem;
-    }
-
-    @media (max-width: 900px) {
-      display: none;
-    }
-
-    @media (width: 1024px) {
-      bottom: 51.9rem;
-      left: 8.7rem;
     }
   }
 

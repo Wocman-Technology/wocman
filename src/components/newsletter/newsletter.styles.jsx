@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { CustomButton } from "../custom-button/custom-button.component";
 
 export const NewsLetterWrapper = styled.div`
   display: grid;
@@ -75,11 +76,29 @@ export const NewsLetterWrapper = styled.div`
         height: 49px;
         background: #efeff7;
         border-radius: 5px;
+        @media (max-width: 768px) {
+          justify-self: center;
+          width: 100%;
+        }
       }
-      button.sc-bwzfXH.eIyaYk {
+
+      @media (max-width: 768px) {
+        justify-content: center;
+        padding: 0.5rem !important;
+      }
+      /* button.sc-bwzfXH.eIyaYk {
         max-width: 200px !important;
         margin: auto;
-      }
+      } */
     }
+  }
+`;
+
+export const ButtonWrapper = styled(CustomButton)`
+  width: 200px !important;
+  margin: 0 auto;
+  @media (max-width: 768px) {
+    width: 200px !important;
+    margin-bottom: 2rem;
   }
 `;
