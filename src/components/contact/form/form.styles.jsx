@@ -62,6 +62,8 @@ export const FormWrapper = styled.div`
          margin-bottom: 1.5rem;
          color: #552D1E;
          line-height: 40px;
+         display: block;
+         width: 100%;
      }
      small {
          color: rgba(0, 0, 0, 0.5);
