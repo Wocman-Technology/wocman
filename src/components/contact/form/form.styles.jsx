@@ -67,6 +67,7 @@ export const FormWrapper = styled.div`
          color: rgba(0, 0, 0, 0.5);
          font-weight: bold;
          line-height: 25px;
+         display: block;
      }
   }
 
