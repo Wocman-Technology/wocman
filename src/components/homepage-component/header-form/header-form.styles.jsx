@@ -53,6 +53,11 @@ export const FormOuterWrapper = styled.div`
   @media (height: 1366px) {
     margin-top: 57vh;
   }
+
+  
+  @media (max-width: 767px) {
+  display: none;
+  }
 `;
 
 export const FormWrapper = styled.div`
@@ -79,6 +84,9 @@ export const FormWrapper = styled.div`
   @media (max-width: 900px) {
     margin: 0 auto;
     width: 90%;
+  }
+  @media (max-width: 767px) {
+  display: none;
   }
 `;
 
