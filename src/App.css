@@ -1,18 +1,17 @@
-
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   letter-spacing: 0.5px;
   scroll-behavior: smooth;
 }
-  h2.featured {
+h2.featured {
   font-size: 16px;
   font-weight: 900;
   line-height: 140.62%;
   text-align: center;
-  color: #552D1E;
+  color: #552d1e;
   margin-bottom: 5rem;
 }
 

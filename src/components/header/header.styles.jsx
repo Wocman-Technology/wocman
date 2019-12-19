@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
 export const HeaderWrapper = styled.header`
-  background-image: ${props =>  props.header ? `linear-gradient(0deg, rgba(85, 45, 30, 0.7), rgba(85, 45, 30, 0.7)), url(${props.image})` : `url(${props.image})`};
+  background-image: ${props =>
+    props.header
+      ? `linear-gradient(0deg, rgba(85, 45, 30, 0.7), rgba(85, 45, 30, 0.7)), url(${props.image})`
+      : `url(${props.image})`};
   background-position: center center;
   background-repeat: no-repeat;
   object-fit: cover;
@@ -14,11 +17,11 @@ export const HeaderWrapper = styled.header`
     height: 85vh;
   }
 
-  @media (width: 768px){
+  @media (width: 768px) {
     height: 50vh;
   }
 
-  @media (width: 1024px){
+  @media (width: 1024px) {
     height: 50vh;
   }
 
@@ -29,7 +32,7 @@ export const HeaderWrapper = styled.header`
     width: 50%;
     margin: auto;
     vertical-align: middle;
-    margin-top: ${props => props.header ? "15vw" : "10vw"};
+    margin-top: ${props => (props.header ? "15vw" : "10vw")};
     color: white;
 
     h2 {

@@ -10,18 +10,18 @@ export const FaqWrapper = styled.section`
     margin: 0 auto !important;
 
     div.active.title {
-        color: #552D1E !important;
+      color: #552d1e !important;
     }
     p {
-        color: #552D1E;
+      color: #552d1e;
     }
   }
 
-  @media (max-width: 768px){
-      width: 100%;
-      padding: 2rem;
-      div.accordion.styled {
-        width: 90% !important;
-      }
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 2rem;
+    div.accordion.styled {
+      width: 90% !important;
+    }
   }
 `;

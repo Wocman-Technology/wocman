@@ -13,10 +13,10 @@ export const HeaderForm = () => {
   return (
     <FormOuterWrapper>
       <div className="header-button">
-        <CustomButton onClick={() => setState(false)}>
-          customer
+        <CustomButton onClick={() => setState(false)}>customer</CustomButton>
+        <CustomButton inverted onClick={() => setState(true)}>
+          wocman
         </CustomButton>
-        <CustomButton inverted onClick={() => setState(true)}>wocman</CustomButton>
       </div>
       {state ? (
         <FormWrapper>
@@ -32,7 +32,7 @@ export const HeaderForm = () => {
           <FormInput placeholder="Full Name" />
           <FormInput placeholder="Phone Number" />
           <FormInput placeholder="Email" />
-        <JoinButton inverted>Submit</JoinButton>
+          <JoinButton inverted>Submit</JoinButton>
         </FormWrapper>
       )}
     </FormOuterWrapper>

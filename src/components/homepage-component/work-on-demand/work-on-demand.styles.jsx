@@ -1,6 +1,5 @@
-import styled from 'styled-components';
-import {CustomButton} from '../../custom-button/custom-button.component'
-
+import styled from "styled-components";
+import { CustomButton } from "../../custom-button/custom-button.component";
 
 export const WorkOnDemandWrapper = styled.div`
   background-image: ${props => props.img};
@@ -13,17 +12,16 @@ export const WorkOnDemandWrapper = styled.div`
   height: 425px;
 
   img {
-      display: block;
-      margin: 0 auto;
-      margin-top: -3rem;
+    display: block;
+    margin: 0 auto;
+    margin-top: -3rem;
   }
-
-`
+`;
 
 export const ButtonWrapper = styled(CustomButton)`
-text-transform: uppercase;
-font-size: 13px;
-margin: 0 auto;
-margin-top: 23.5rem;
-width: 250px;
-`
+  text-transform: uppercase;
+  font-size: 13px;
+  margin: 0 auto;
+  margin-top: 23.5rem;
+  width: 250px;
+`;

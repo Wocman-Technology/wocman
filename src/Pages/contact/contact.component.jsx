@@ -16,7 +16,7 @@ export const Contact = () => (
         <p>Wocman is here to serve you</p>
       </div>
     </ContactHeaderWrapper>
-    <ContactForm/>
+    <ContactForm />
     <MapContainer />
     <NewsLetter />
   </>

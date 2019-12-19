@@ -17,7 +17,7 @@ const Styles = styled.div`
     height: 20%;
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
     border-radius: 10px 10px 0px 0px;
-    @media (max-width: 768px){
+    @media (max-width: 768px) {
       height: 40%;
     }
     div {
@@ -29,7 +29,7 @@ const Styles = styled.div`
       /* flex: 1; */
       width: 30%;
 
-      @media (max-width: 768px){
+      @media (max-width: 768px) {
         width: 100%;
         padding: 1rem;
         height: 33%;
@@ -48,12 +48,11 @@ const Styles = styled.div`
     height: 80%;
     & > div {
       height: 80%;
-    @media (max-width: 768px){
+      @media (max-width: 768px) {
         height: 60% !important;
-        }
+      }
     }
   }
- 
 `;
 
 const mapStyles = {
@@ -126,19 +125,19 @@ export class MapContainer extends Component {
             lng: 3.3637405
           }}
         >
-        <Marker
-          onClick={this.onMarkerClick}
-          name={"17 Akinsanya street Ojodu Berger, Lagos state"}
-        />
-        <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}
-          onClose={this.onClose}
-        >
-          <div>
-            <h4>{this.state.selectedPlace.name}</h4>
-          </div>
-        </InfoWindow>
+          <Marker
+            onClick={this.onMarkerClick}
+            name={"17 Akinsanya street Ojodu Berger, Lagos state"}
+          />
+          <InfoWindow
+            marker={this.state.activeMarker}
+            visible={this.state.showingInfoWindow}
+            onClose={this.onClose}
+          >
+            <div>
+              <h4>{this.state.selectedPlace.name}</h4>
+            </div>
+          </InfoWindow>
         </Map>
       </Styles>
     );

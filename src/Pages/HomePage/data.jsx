@@ -47,15 +47,14 @@ import Survey from "../../assets/survey.svg";
 import SoilEvaluation from "../../assets/soil-evaluation.svg";
 import Electrical from "../../assets/electrical.svg";
 
+// At your service
 
-// At your service 
-
-import ElectricalFittings from '../../assets/electrical-fittings.jpg'
-import InteriorFittings from '../../assets/interior-fittings.jpg'
-import GeneratorRepairs from '../../assets/generator-repairs.jpg'
-import PaintingService from '../../assets/painting-service.jpg'
-import GardeningService from '../../assets/gardening-service.jpg'
-import CleaningService from '../../assets/cleaning-service.jpg'
+import ElectricalFittings from "../../assets/electrical-fittings.jpg";
+import InteriorFittings from "../../assets/interior-fittings.jpg";
+import GeneratorRepairs from "../../assets/generator-repairs.jpg";
+import PaintingService from "../../assets/painting-service.jpg";
+import GardeningService from "../../assets/gardening-service.jpg";
+import CleaningService from "../../assets/cleaning-service.jpg";
 
 export const categories = [
   {
@@ -244,7 +243,6 @@ export const ourFeaturedServices = [
   }
 ];
 
-
 export const atYourService = [
   {
     id: `${ElectricalFittings}`,
@@ -281,5 +279,5 @@ export const atYourService = [
     img: `${CleaningService}`,
     title: "Cleaning Service",
     desc: "A global center for art, fashion, gastronomy and culture"
-  },
-]
+  }
+];

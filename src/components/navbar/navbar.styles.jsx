@@ -23,7 +23,6 @@ export const NavWrapper = styled.nav`
       margin-left: 17rem;
       font-size: 0.9rem;
 
-
       li {
         margin: 0 0.5rem;
       }
@@ -60,12 +59,12 @@ export const NavWrapper = styled.nav`
     }
   }
 
-  @media (min-width: 768px) and (max-width: 900px){
-      nav {
-        ul:nth-child(1) {
+  @media (min-width: 768px) and (max-width: 900px) {
+    nav {
+      ul:nth-child(1) {
         margin-left: 7rem;
-    }
-        ul:not(:nth-child(1)) {
+      }
+      ul:not(:nth-child(1)) {
         li {
           a {
             button {
@@ -74,25 +73,25 @@ export const NavWrapper = styled.nav`
           }
         }
       }
-      }
+    }
   }
 
   @media (max-width: 768px) {
     nav {
       padding: 0 15px !important;
       img {
-      display: flex;
-      position: static;
-      z-index: 1;
-      height: 60px;
-      width: 50%;
-      margin-bottom:0;
-      top: 0;
-      left: 0;
-    }
-    ul:nth-child(1) {
-      margin-left: 0;
-    }
+        display: flex;
+        position: static;
+        z-index: 1;
+        height: 60px;
+        width: 50%;
+        margin-bottom: 0;
+        top: 0;
+        left: 0;
+      }
+      ul:nth-child(1) {
+        margin-left: 0;
+      }
       ul:not(:nth-child(1)) {
         li {
           a {

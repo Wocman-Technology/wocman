@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const FeaturedServiceWrapper = styled.article`
-
   margin: 1rem;
   text-align: center;
   padding: 0rem;
@@ -14,13 +13,13 @@ export const FeaturedServiceWrapper = styled.article`
     padding-top: 1.2rem;
 
     /* light */
-    background: #FFF5EE;
+    background: #fff5ee;
   }
 
   div.title {
     height: 68px;
     text-align: center;
-    background: #FFFFFF;
+    background: #ffffff;
     padding: 1rem 3rem;
     border-radius: 0px 0px 13.5px 13.5px;
     box-shadow: 0px 4px 26px rgba(0, 0, 0, 0.06);
@@ -32,10 +31,9 @@ export const FeaturedServiceWrapper = styled.article`
     line-height: 140.62%;
     /* or 42px */
 
-
     /* brown */
 
-    color: #552D1E;
+    color: #552d1e;
   }
 
   @media (max-width: 768px) {

@@ -1,37 +1,34 @@
-import styled, {css} from 'styled-components';
+import styled, { css } from "styled-components";
 
 const buttonStyles = css`
+  background: #552d1e;
+  border-radius: 2px;
+  color: #ffffff;
+  border: none;
 
-    background: #552D1E;
-    border-radius: 2px;
-    color: #FFFFFF;
-    border: none;
-
-    &:hover {
-        background: #FFFFFF;
-        box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.3);
-        color: #552D1E;
-    }
-`
+  &:hover {
+    background: #ffffff;
+    box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.3);
+    color: #552d1e;
+  }
+`;
 
 const invertedButtonStyles = css`
-    background: #FFFFFF;
-    box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.3);
-    border-radius: 2px;
-    color: #552D1E;
-    border: none;
+  background: #ffffff;
+  box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.3);
+  border-radius: 2px;
+  color: #552d1e;
+  border: none;
 
-    &:hover {
-        background: #552D1E;
-        color: #FFFFFF;
+  &:hover {
+    background: #552d1e;
+    color: #ffffff;
+  }
+`;
 
-    }
-`
-
-const getButtonStyles = ({inverted}) => {
-  
-    return inverted ? invertedButtonStyles : buttonStyles;
-  };
+const getButtonStyles = ({ inverted }) => {
+  return inverted ? invertedButtonStyles : buttonStyles;
+};
 
 export const ButtonWrapper = styled.button`
   min-width: 165px;
@@ -49,6 +46,7 @@ export const ButtonWrapper = styled.button`
   display: flex;
   justify-content: center;
   ${getButtonStyles}
-  border: ${props => props.regular ? "1px solid #552D1E" : "1px solid #FFF5EE"}
+  border: ${props =>
+    props.regular ? "1px solid #552D1E" : "1px solid #FFF5EE"}
 
-`
+`;

@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import { FooterWrapper } from "./footer.styles";
 import NavBarLogo from "../../assets/Logo.svg";
@@ -13,7 +13,7 @@ export const Footer = () => {
             <MDBCol md="3" lg="3" xl="3" className="mx-auto mt-3">
               <div className="img__div">
                 <Link to="/">
-                <img className="pl-3" src={NavBarLogo} alt="logo" />
+                  <img className="pl-3" src={NavBarLogo} alt="logo" />
                 </Link>
               </div>
             </MDBCol>
@@ -31,12 +31,12 @@ export const Footer = () => {
             <MDBCol md="2" lg="3" xl="3" className="mx-auto mt-3">
               <h6 className="text-uppercase mb-4 font-weight-bold">PAGES</h6>
               <p>
-              <Link to="/services">Our Services</Link>
+                <Link to="/services">Our Services</Link>
               </p>
-               <p>
+              <p>
                 <Link to="/about">About us</Link>
               </p>
-               <p>
+              <p>
                 <Link to="/contact">Contact us</Link>
               </p>
               {/* <p>
