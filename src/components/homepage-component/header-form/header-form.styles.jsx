@@ -64,7 +64,8 @@ export const FormWrapper = styled.div`
   width: 80%;
   z-index: 3;
   display: grid;
-  grid-template-columns: repeat(3, 32%);
+  grid-template-columns: 32% 32% 32%;
+  grid-template-rows: "1fr 1fr";
   justify-content: space-evenly;
   background: ${props =>
     props.customer ? "#552D1E !important" : "#FFFFFF !important"};
@@ -91,7 +92,7 @@ export const FormWrapper = styled.div`
 `;
 
 export const JoinButton = styled(CustomButton)`
-  width: 50%;
-  margin: ${props => (props.inverted ? "0 auto 2rem 120%" : "0 auto 2rem;")};
+  width: ${props => props.inverted ? "70%" : "50%"};
+  margin: 0 auto 2rem;
   font-size: 0.9rem;
 `;

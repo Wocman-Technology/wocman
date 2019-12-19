@@ -32,7 +32,9 @@ export const HeaderForm = () => {
           <FormInput placeholder="Full Name" />
           <FormInput placeholder="Phone Number" />
           <FormInput placeholder="Email" />
+          <div></div>
           <JoinButton inverted>Submit</JoinButton>
+          <div></div>
         </FormWrapper>
       )}
     </FormOuterWrapper>

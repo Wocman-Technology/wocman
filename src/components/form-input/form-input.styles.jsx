@@ -6,18 +6,18 @@ export const InputWrapper = styled.span`
   padding: 0;
 
   input {
-    height: 2rem;
-    background: #ffffff;
+    height: 45px;
+    background: #FFFFFF;
     width: 100% !important;
-    padding-left: 1rem;
+    padding: 1rem;
+    outline: none;
     /* 32% Gray Light */
 
-    border: 1px solid #adadad;
+    border: 1px solid #ADADAD;
     box-sizing: border-box;
-    border-radius: 4px;
+    border-radius: 2px;
   }
   input::placeholder {
-    font: inherit;
     display: flex;
     align-items: center;
     letter-spacing: -0.25px;
