@@ -3,7 +3,7 @@ import { CustomButton } from "../../custom-button/custom-button.component";
 
 export const FormOuterWrapper = styled.div`
   z-index: 3;
-  margin-top: 50px;
+  margin-top: 70px;
 
   .header-button {
     display: flex;
@@ -14,6 +14,9 @@ export const FormOuterWrapper = styled.div`
     @media (width: 1024px) {
       margin: 0 auto;
     }
+    @media (max-width: 900px) {
+    width: 90%;
+  }
 
     button {
       font-size: 0.7rem;
@@ -22,7 +25,10 @@ export const FormOuterWrapper = styled.div`
   }
 
   @media (max-width: 900px) {
-    display: none;
+    width: 90%;
+    padding: 0;
+    margin: 0 auto;
+    margin-bottom: 4rem !important;
   }
 
   @media (width: 1024px) {
@@ -30,7 +36,7 @@ export const FormOuterWrapper = styled.div`
     position: static;
     align-items: center;
     flex-direction: column;
-    margin-top: 20vh;
+    margin-top: 80vh;
     justify-content: center;
     height: 150px;
   }
@@ -39,8 +45,13 @@ export const FormOuterWrapper = styled.div`
     margin-top: 110px;
   }
 
-  @media (min-height: 969px) {
-    margin-top: 40vh;
+  @media (min-height: 969px) and (max-height: 1365px) {
+    margin-top: 30vh;
+    margin-bottom: 4rem;
+  }
+
+  @media (height: 1366px) {
+    margin-top: 57vh;
   }
 `;
 
@@ -66,7 +77,8 @@ export const FormWrapper = styled.div`
   }
 
   @media (max-width: 900px) {
-    display: none;
+    margin: 0 auto;
+    width: 90%;
   }
 `;
 

@@ -22,6 +22,6 @@ export const HeadingWrapper = styled.h2`
   ${regularSection}
 
   @media (max-width: 768px) {
-    margin-top: 7rem;
+    ${regularSection}
   }
 `;
