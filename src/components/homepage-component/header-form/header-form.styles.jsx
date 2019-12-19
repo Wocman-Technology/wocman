@@ -12,9 +12,8 @@ export const FormOuterWrapper = styled.div`
     margin: 0 auto;
     padding: 0;
     @media (width: 1024px) {
-    margin: 0 auto;
+      margin: 0 auto;
     }
-
 
     button {
       font-size: 0.7rem;
@@ -36,8 +35,12 @@ export const FormOuterWrapper = styled.div`
     height: 150px;
   }
 
-  @media (min-width: 1200px){
-     margin-top: 110px;
+  @media (min-width: 1200px) {
+    margin-top: 110px;
+  }
+
+  @media (min-height: 969px) {
+    margin-top: 40vh;
   }
 `;
 
