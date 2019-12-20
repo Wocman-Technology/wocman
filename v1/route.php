@@ -33,6 +33,7 @@ define("create_location", "POST,create_location,true,admin");
 define("location", "GET,location,true,admin");
 define("wocman_register", "POST,wocman_register,false,admin");
 define("wocman_login", "POST,wocman_login,false,admin");
+define("wocman_upload_photo", "POST,wocman_upload_photo,true,admin");
 
 
 //general
