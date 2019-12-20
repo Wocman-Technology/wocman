@@ -26,6 +26,6 @@ http://localhost/wocman/v1/?get_token
 
 # Note
 
-To register an admin, pass the variable called secret, along with other registration details. contact me to get this key
+To register an admin, pass the variable called secret, along with other registration details. contact us to get this key
 
 All the admin routes needs admin to login. make sure your admin user account is logged to test the admin routes

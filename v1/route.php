@@ -13,6 +13,7 @@
 define("workman_login", "POST,workman_login,false,all");
 define("workman_register", "POST,workman_register,false,all");
 define("workman_upload", "POST,workman_upload,false,all");
+define("workman_attach", "POST,workman_upload_photo,false,all");
 
 
 //cusstomer route

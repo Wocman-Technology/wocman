@@ -58,7 +58,7 @@ function emailHandler($emailaddress,$subject,$bodyTitle,$bodyText)
     </center>';
            
    if(mail($emailaddress,$subject,$body,$headers)){
-    $_SESSION['message'] = "Congatulation, an email has been sent to you, kindly visit your mail box and click on the button to activate your account.";
+    $_SESSION['message'] = "Congratulation, an email has been sent to you, kindly visit your mail box and click on the button to activate your account.";
    }else{
     $_SESSION['message'] = "Mail pusher activation failed on registration, contact us.";
    }
