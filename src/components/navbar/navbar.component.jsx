@@ -21,7 +21,7 @@ export const NavBar = () => {
       <MDBNavbar color="default-color" dark expand="md">
         <MDBNavbarBrand>
           <Link to="/">
-            <img src={NavBarLogo} title="wocman"></img>
+            <img src={NavBarLogo} title="wocman" alt="Logo"></img>
           </Link>
         </MDBNavbarBrand>
         <MDBNavbarToggler onClick={() => setisOpen(!isOpen)} />

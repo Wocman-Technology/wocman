@@ -12,7 +12,7 @@ export const NewsLetter = () => (
     </div>
     <div>
       <input type="text" placeholder="Email address" />
-      <ButtonWrapper>Save Me</ButtonWrapper>
+      <ButtonWrapper>Subscribe</ButtonWrapper>
     </div>
   </NewsLetterWrapper>
 );

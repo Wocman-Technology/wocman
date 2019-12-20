@@ -248,36 +248,36 @@ export const atYourService = [
     id: `${ElectricalFittings}`,
     img: `${ElectricalFittings}`,
     title: "Electrical Fittings",
-    desc: "As a holiday destination, Lisbon offers a rich and varied history"
+    desc: "Wocman executes all your electrical works with precision"
   },
   {
     id: `${InteriorFittings}`,
     img: `${InteriorFittings}`,
     title: "Interior Fittings",
-    desc: "One of the most beautiful cities and center of Italian Renaissance."
+    desc: "Get all your fittings done by seasoned designers at wocman"
   },
   {
     id: `${GeneratorRepairs}`,
     img: `${GeneratorRepairs}`,
     title: "Generator Repairs",
-    desc: "Modern skyscrapers, high-tech subways and pop culture meet"
+    desc: "You can get to repair your bad generator on the go"
   },
   {
     id: `${PaintingService}`,
     img: `${PaintingService}`,
     title: "Painting Service",
-    desc: "Aboramatic landscape with amazing experiences in the city"
+    desc: "With our naps and laying off you get an awesome finish"
   },
   {
     id: `${GardeningService}`,
     img: `${GardeningService}`,
     title: "Gardening Service",
-    desc: "One of the principal civilizations of the ancient Middle East"
+    desc: "Get a professional gardner close to you on wocman"
   },
   {
     id: `${CleaningService}`,
     img: `${CleaningService}`,
     title: "Cleaning Service",
-    desc: "A global center for art, fashion, gastronomy and culture"
+    desc: "Get wocman to do your cleaning sores with sparkles."
   }
 ];

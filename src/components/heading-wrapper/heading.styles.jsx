@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const regularSection = ({ regular }) => {
-  return regular ? "margin-top: 7rem" : "margin-top: 14rem";
+  return regular ? "margin-top: 7rem" : "margin-top: 230px";
 };
 
 export const HeadingWrapper = styled.h2`
@@ -22,6 +22,6 @@ export const HeadingWrapper = styled.h2`
   ${regularSection}
 
   @media (max-width: 768px) {
-    ${regularSection}
+    margin-top: ${props => (props.header ? "7rem" : "7rem")};
   }
 `;

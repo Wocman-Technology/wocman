@@ -95,10 +95,9 @@ export const NewsLetterWrapper = styled.div`
 `;
 
 export const ButtonWrapper = styled(CustomButton)`
-  width: 200px !important;
-  margin: 0 auto;
+  width: 150px !important;
+  margin: 0;
   @media (max-width: 768px) {
-    width: 200px !important;
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem;
   }
 `;

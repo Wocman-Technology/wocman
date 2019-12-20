@@ -80,22 +80,26 @@ export const Footer = () => {
               <div className="text-center text-md-right">
                 <ul className="list-unstyled list-inline">
                   <li className="list-inline-item">
-                    <a className="btn-floating btn-sm rgba-white-slight mx-1">
+                    <a
+                      className="btn-floating btn-sm rgba-white-slight mx-1"
+                      href="https://slack-redir.net/link?url=https%3A%2F%2Fwww.facebook.com%2FWocman-Technology-101518264663127%2Fnotifications%2F"
+                    >
                       <i className="fab fa-facebook-f" />
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a className="btn-floating btn-sm rgba-white-slight mx-1">
+                    <a
+                      className="btn-floating btn-sm rgba-white-slight mx-1"
+                      href="https://twitter.com/WocmanT?s=08"
+                    >
                       <i className="fab fa-twitter" />
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a className="btn-floating btn-sm rgba-white-slight mx-1">
-                      <i className="fab fa-google-plus" />
-                    </a>
-                  </li>
-                  <li className="list-inline-item">
-                    <a className="btn-floating btn-sm rgba-white-slight mx-1">
+                    <a
+                      className="btn-floating btn-sm rgba-white-slight mx-1"
+                      href="https://www.linkedin.com/company/wocman-technology"
+                    >
                       <i className="fab fa-linkedin" />
                     </a>
                   </li>
