@@ -10,15 +10,15 @@
 //routes
 
 //workman route
-define("workman_login", "POST,workman_login,false,all");
-define("workman_register", "POST,workman_register,false,all");
-define("workman_upload", "POST,workman_upload,false,all");
-define("workman_attach", "POST,workman_upload_photo,false,all");
+define("workman_login", "POST,workman_login,false,workman");
+define("workman_register", "POST,workman_register,false,workman");
+define("workman_upload", "POST,workman_upload,false,workman");
+define("workman_attach", "POST,workman_upload_photo,false,workman");
 
 
-//cusstomer route
-define("customer_register", "POST,customer_register,false,all");
-define("customer_login", "POST,customer_login,false,all");
+//customer route
+define("customer_register", "POST,customer_register,false,customer");
+define("customer_login", "POST,customer_login,false,customer");
 
 
 
@@ -30,10 +30,10 @@ define("qualification", "GET,qualification,true,admin");
 define("delete_location", "POST,delete_location,true,admin");
 define("update_location", "POST,update_location,true,admin");
 define("create_location", "POST,create_location,true,admin");
-define("location", "GET,location,true,admin");
-define("wocman_register", "POST,wocman_register,false,admin");
-define("wocman_login", "POST,wocman_login,false,admin");
 define("wocman_upload_photo", "POST,wocman_upload_photo,true,admin");
+define("location", "GET,location,true,admin");
+define("wocman_register", "POST,wocman_register,false,adminNoAuthHere");
+define("wocman_login", "POST,wocman_login,false,adminNoAuthHere");
 
 
 //general

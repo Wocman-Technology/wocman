@@ -18,6 +18,7 @@ $invalid_url = website_link;
 $url = website_link;
 $routes = $_GET['url'];
 $x = explode(WOCMAN_SPLIT, $routes);
+$woc_token = getToken(120);
 if ($x[2] == "Workman") {
     $check = $mysqli->query("SELECT * FROM $tbl_temp WHERE email = '$x[1]' ");
     if ($check->num_rows == 1) {
@@ -36,7 +37,7 @@ if ($x[2] == "Workman") {
              $checks = $mysqli->query("SELECT * FROM $tbl_workmen WHERE email = '$x[1]' ");
             if ($checks->num_rows < 1) {
 
-            if($mysqli->query("INSERT INTO $tbl_workmen(`email`,`name`,`phone`,`password`,`qualification`,`location`,`active`) VALUES('$email','$name','$phone','".trim($x[0],'?')."','$qualification','$location','1') ")){
+            if($mysqli->query("INSERT INTO $tbl_workmen(`email`,`name`,`phone`,`password`,`qualification`,`location`,`active`,`".wocman_token_column."`) VALUES('$email','$name','$phone','".trim($x[0],'?')."','$qualification','$location','1', '$woc_token') ")){
                 $mysqli->query("DELETE FROM $tbl_temp WHERE id='".$row_fetch['id']."' ");
 
         $url_email = website_link."/workman_login";
@@ -127,7 +128,7 @@ if ($x[2] == "Workman") {
              $checks = $mysqli->query("SELECT * FROM $tbl_workmen WHERE email = '$x[1]' ");
             if ($checks->num_rows < 1) {
 
-            if($mysqli->query("INSERT INTO $tbl_customer(`email`,`name`,`phone`,`password`) VALUES('".$row_fetch['email']."','".$row_fetch['name']."','".$row_fetch['phone']."','".trim($x[0],'?')."') ")){
+            if($mysqli->query("INSERT INTO $tbl_customer(`email`,`name`,`phone`,`password`,`".wocman_token_column."`) VALUES('".$row_fetch['email']."','".$row_fetch['name']."','".$row_fetch['phone']."','".trim($x[0],'?')."','$woc_token') ")){
  $mysqli->query("DELETE FROM $tbl_temp WHERE id='".$row_fetch['id']."' ");
 
         $url_email = website_link."/customer_login";
@@ -224,7 +225,7 @@ if ($x[2] == "Workman") {
              $checks = $mysqli->query("SELECT * FROM $tbl_wocman WHERE email = '$x[1]' ");
             if ($checks->num_rows < 1) {
 
-            if($mysqli->query("INSERT INTO $tbl_wocman(`email`,`name`,`phone`,`password`,`secret_key`) VALUES('$email','$name','$phone','".trim($x[0],'?')."','$secret_key') ")){
+            if($mysqli->query("INSERT INTO $tbl_wocman(`email`,`name`,`phone`,`password`,`secret_key`,`".wocman_token_column."`) VALUES('$email','$name','$phone','".trim($x[0],'?')."','$secret_key','$woc_token') ")){
                 $mysqli->query("DELETE FROM $tbl_temp WHERE id='".$row_fetch['id']."' ");
 
         $url_email = website_link."/wocman_login";

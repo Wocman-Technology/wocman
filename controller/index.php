@@ -9,7 +9,7 @@ require WOCMAN_DIR.WOCMAN_PREFIX_FILE.'function.php';
  * Details: This file is part of the wocman technology file
  * Author: Justice
  *
- */
+*/
 define('COOKIE_FILE', 'cookie.txt');
 $_SESSION['token']  = isset($_SESSION['token'])?$_SESSION['token']:getToken(120);
 
@@ -44,16 +44,16 @@ if ($routes == "?customer_register") {
     extract(${"_".$_SERVER['REQUEST_METHOD']});
 
 	$error = "Email Input Violation Error";
-    $email = remove_tags($email);$ee= filter_email($email);$ee= stringLength($ee,5,50);   $customer_email_address=normalize($ee, $url, $error);
+    $email = remove_tags(isset($email)?$email:'error');$ee= filter_email($email);$ee= stringLength($ee,5,50);   $customer_email_address=normalize($ee, $url, $error);
 
     $error = "Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.";
-    $psd =  remove_tags($password);$ee= filter_password($psd);   $ee= stringLength($ee,8,50);$cusomer_password=normalize($ee, $url, $error);
+    $psd =  remove_tags(isset($password)?$password:'error');$ee= filter_password($psd);   $ee= stringLength($ee,8,50);$cusomer_password=normalize($ee, $url, $error);
 
     $error = "Name Input Violation Error";
-    $fn =  remove_tags($name);$ee= filter_string($fn);  $ee= stringLength($ee,4,50); $customer_name=normalize($ee, $url, $error);
+    $fn =  remove_tags(isset($name)?$name:'error');$ee= filter_string($fn);  $ee= stringLength($ee,4,50); $customer_name=normalize($ee, $url, $error);
 
     $error = "Phone number Violation Error";
-    $phone =  remove_tags($phone);$ee= filter_string($phone);  $ee= stringLength($ee,4,15); $customer_phone=normalize($ee, $url, $error);
+    $phone =  remove_tags(isset($phone)?$phone:'error');$ee= filter_string($phone);  $ee= stringLength($ee,4,15); $customer_phone=normalize($ee, $url, $error);
 
     $type = "Customer";
      $check = $mysqli->query("SELECT * FROM $tbl_temp WHERE email='$customer_email_address' AND password='$cusomer_password' ");
@@ -127,22 +127,22 @@ if ($routes == "?customer_register") {
 	    
 
     $error = "Email Input Violation Error";
-    $email = remove_tags($email);$ee= filter_email($email);$ee= stringLength($ee,5,50);   $customer_email_address=normalize($ee, $url, $error);
+    $email = remove_tags(isset($email)?$email:'error');$ee= filter_email($email);$ee= stringLength($ee,5,50);   $customer_email_address=normalize($ee, $url, $error);
 
     $error = "Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.";
-    $psd =  remove_tags($password);$ee= filter_password($psd);   $ee= stringLength($ee,8,50);$cusomer_password=normalize($ee, $url, $error);
+    $psd =  remove_tags(isset($password)?$password:'error');$ee= filter_password($psd);   $ee= stringLength($ee,8,50);$cusomer_password=normalize($ee, $url, $error);
 
     $error = "Name Input Violation Error";
-    $fn =  remove_tags($name);$ee= filter_string($fn);  $ee= stringLength($ee,4,50); $customer_name=normalize($ee, $url, $error);
+    $fn =  remove_tags(isset($name)?$name:'error');$ee= filter_string($fn);  $ee= stringLength($ee,4,50); $customer_name=normalize($ee, $url, $error);
 
     $error = "Phone number Violation Error";
-    $phone =  remove_tags($phone);$ee= filter_string($phone);  $ee= stringLength($ee,4,15); $customer_phone=normalize($ee, $url, $error);
+    $phone =  remove_tags(isset($phone)?$phone:'error');$ee= filter_string($phone);  $ee= stringLength($ee,4,15); $customer_phone=normalize($ee, $url, $error);
 
     $error = "Qualification Input Violation Error";
-    $fn =  remove_tags($qualification);$ee= filter_string($fn);  $ee= stringLength($ee,1,50); $customer_qualfication=normalize($ee, $url, $error);
+    $fn =  remove_tags(isset($qualification)?$qualification:'error');$ee= filter_string($fn);  $ee= stringLength($ee,1,50); $customer_qualfication=normalize($ee, $url, $error);
 
     $error = "location  Violation Error";
-    $vv =  remove_tags($location);$ee= filter_string($vv);  $ee= stringLength($ee,2,15); $customer_location=normalize($ee, $url, $error);
+    $vv =  remove_tags(isset($location)?$location:'error');$ee= filter_string($vv);  $ee= stringLength($ee,2,15); $customer_location=normalize($ee, $url, $error);
 
     $type = "Workman";
 
@@ -217,16 +217,16 @@ if ($routes == "?customer_register") {
         
 
     $error = "Email Input Violation Error";
-    $email = remove_tags($email);$ee= filter_email($email);$ee= stringLength($ee,5,50);   $customer_email_address=normalize($ee, $url, $error);
+    $email = remove_tags(isset($email)?$email:'error');$ee= filter_email($email);$ee= stringLength($ee,5,50);   $customer_email_address=normalize($ee, $url, $error);
 
     $error = "Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.";
-    $psd =  remove_tags($password);$ee= filter_password($psd);   $ee= stringLength($ee,8,50);$cusomer_password=normalize($ee, $url, $error);
+    $psd =  remove_tags(isset($password)?$password:'error');$ee= filter_password($psd);   $ee= stringLength($ee,8,50);$cusomer_password=normalize($ee, $url, $error);
 
     $error = "Name Input Violation Error";
-    $fn =  remove_tags($name);$ee= filter_string($fn);  $ee= stringLength($ee,4,50); $customer_name=normalize($ee, $url, $error);
+    $fn =  remove_tags(isset($name)?$name:'error');$ee= filter_string($fn);  $ee= stringLength($ee,4,50); $customer_name=normalize($ee, $url, $error);
 
     $error = "Phone number Violation Error";
-    $phone =  remove_tags($phone);$ee= filter_string($phone);  $ee= stringLength($ee,4,15); $customer_phone=normalize($ee, $url, $error);
+    $phone =  remove_tags(isset($phone)?$phone:'error');$ee= filter_string($phone);  $ee= stringLength($ee,4,15); $customer_phone=normalize($ee, $url, $error);
 
     
     if ($secret == wocman_public ) {
@@ -313,10 +313,10 @@ if ($routes == "?customer_register") {
     }
     extract(${"_".$_SERVER['REQUEST_METHOD']});
 	 $error = "Email Input Violation Error";
-    $email = remove_tags($email);$ee= filter_email($email);$ee= stringLength($ee,5,50);   $customer_email_address=normalize($ee, $url, $error);
+    $email = remove_tags(isset($email)?$email:'error');$ee= filter_email($email);$ee= stringLength($ee,5,50);   $customer_email_address=normalize($ee, $url, $error);
 
     $error = "Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.";
-    $psd =  remove_tags($password);$ee= filter_password($psd);   $ee= stringLength($ee,8,50);$cusomer_password=normalize($ee, $url, $error);
+    $psd =  remove_tags(isset($password)?$password:'error');$ee= filter_password($psd);   $ee= stringLength($ee,8,50);$cusomer_password=normalize($ee, $url, $error);
 
      $check = $mysqli->query("SELECT * FROM $tbl_customer WHERE email = '$customer_email_address' ");
     if ($check->num_rows == 1) {
@@ -366,10 +366,10 @@ if ($routes == "?customer_register") {
     }
     extract(${"_".$_SERVER['REQUEST_METHOD']});
         $error = "Email Input Violation Error";
-    $email = remove_tags($email);$ee= filter_email($email);$ee= stringLength($ee,5,50);   $customer_email_address=normalize($ee, $url, $error);
+    $email = remove_tags(isset($email)?$email:'error');$ee= filter_email($email);$ee= stringLength($ee,5,50);   $customer_email_address=normalize($ee, $url, $error);
 
     $error = "Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.";
-    $psd =  remove_tags($password);$ee= filter_password($psd);   $ee= stringLength($ee,8,50);$cusomer_password=normalize($ee, $url, $error);
+    $psd =  remove_tags(isset($password)?$password:'error');$ee= filter_password($psd);   $ee= stringLength($ee,8,50);$cusomer_password=normalize($ee, $url, $error);
 
      $check = $mysqli->query("SELECT * FROM $tbl_workmen WHERE email = '$customer_email_address' ");
     if ($check->num_rows == 1) {
@@ -420,10 +420,10 @@ if ($routes == "?customer_register") {
     }
     extract(${"_".$_SERVER['REQUEST_METHOD']});
         $error = "Email Input Violation Error";
-    $email = remove_tags($email);$ee= filter_email($email);$ee= stringLength($ee,5,50);   $customer_email_address=normalize($ee, $url, $error);
+    $email = remove_tags(isset($email)?$email:'error');$ee= filter_email($email);$ee= stringLength($ee,5,50);   $customer_email_address=normalize($ee, $url, $error);
 
     $error = "Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.";
-    $psd =  remove_tags($password);$ee= filter_password($psd);   $ee= stringLength($ee,8,50);$cusomer_password=normalize($ee, $url, $error);
+    $psd =  remove_tags(isset($password)?$password:'error');$ee= filter_password($psd);   $ee= stringLength($ee,8,50);$cusomer_password=normalize($ee, $url, $error);
 
      $check = $mysqli->query("SELECT * FROM $tbl_wocman WHERE email = '$customer_email_address' ");
     if ($check->num_rows == 1) {
@@ -657,7 +657,7 @@ if ($routes == "?customer_register") {
     extract(${"_".$_SERVER['REQUEST_METHOD']});
 
      $error = "Identity Violation Error";
-    $delete_id =  remove_tags($delete_id);$ee= filter_string($delete_id);  $ee= stringLength($ee,1,15); $wocman_delete=normalize($ee, $url, $error);
+    $delete_id =  remove_tags(isset($delete_id)?$delete_id:'error');$ee= filter_string($delete_id);  $ee= stringLength($ee,1,15); $wocman_delete=normalize($ee, $url, $error);
 
     $check = $mysqli->query("SELECT * FROM $tbl_qualification WHERE id='$wocman_delete' ");
     if ($check->num_rows > 0) {
@@ -715,7 +715,7 @@ if ($routes == "?customer_register") {
         $newimage = $title;
         $images = image($image[0]['name'],$image[0]['type'],$image[0]['tmp_name'],$image[0]['error'],$image[0]['size'],$target_dir,$size,$extentions,$newimage);
         $error = $_SESSION['message'];
-        $ee= remove_tags($image);$ee= filter_string($ee);  $ee= stringLength($ee,1,50); $image=normalize($ee, $url, $error);
+        $ee= remove_tags(isset($image)?$image:'error');$ee= filter_string($ee);  $ee= stringLength($ee,1,50); $image=normalize($ee, $url, $error);
        
         // var_dump($images);return false;
         $image = $images;
@@ -774,10 +774,10 @@ if ($routes == "?customer_register") {
     extract(${"_".$_SERVER['REQUEST_METHOD']});
 
     $error = "Title Violation Error";
-    $title =  remove_tags($title);$ee= filter_string($title);  $ee= stringLength($ee,1,15); $wocman_title=normalize($ee, $url, $error);
+    $title =  remove_tags(isset($title)?$title:'error');$ee= filter_string($title);  $ee= stringLength($ee,1,15); $wocman_title=normalize($ee, $url, $error);
 
     $error = "Description  Violation Error";
-    $fn =  remove_tags($description);$ee= filter_string($fn);  $ee= stringLength($ee,1,50); $wocman_description=normalize($ee, $url, $error);
+    $fn =  remove_tags(isset($description)?$description:'error');$ee= filter_string($fn);  $ee= stringLength($ee,1,50); $wocman_description=normalize($ee, $url, $error);
      $check = $mysqli->query("SELECT * FROM $tbl_qualification WHERE title='$wocman_title' ");
     if ($check->num_rows < 1) {
 
@@ -866,7 +866,7 @@ if ($routes == "?customer_register") {
     extract(${"_".$_SERVER['REQUEST_METHOD']});
 
      $error = "Identity Violation Error";
-    $delete_id =  remove_tags($delete_id);$ee= filter_string($delete_id);  $ee= stringLength($ee,1,15); $wocman_delete=normalize($ee, $url, $error);
+    $delete_id =  remove_tags(isset($delete_id)?$delete_id:'error');$ee= filter_string($delete_id);  $ee= stringLength($ee,1,15); $wocman_delete=normalize($ee, $url, $error);
 
     $check = $mysqli->query("SELECT * FROM $tbl_location WHERE id='$wocman_delete' ");
     if ($check->num_rows > 0) {
@@ -967,10 +967,10 @@ if ($routes == "?customer_register") {
     extract(${"_".$_SERVER['REQUEST_METHOD']});
 
     $error = "Title Violation Error";
-    $title =  remove_tags($title);$ee= filter_string($title);  $ee= stringLength($ee,1,15); $wocman_title=normalize($ee, $url, $error);
+    $title =  remove_tags(isset($title)?$title:'error');$ee= filter_string($title);  $ee= stringLength($ee,1,15); $wocman_title=normalize($ee, $url, $error);
 
     $error = "Description  Violation Error";
-    $fn =  remove_tags($description);$ee= filter_string($fn);  $ee= stringLength($ee,1,50); $wocman_description=normalize($ee, $url, $error);
+    $fn =  remove_tags(isset($description)?$description:'error');$ee= filter_string($fn);  $ee= stringLength($ee,1,50); $wocman_description=normalize($ee, $url, $error);
      $check = $mysqli->query("SELECT * FROM $tbl_location WHERE title='$wocman_title' ");
     if ($check->num_rows < 1) {
 

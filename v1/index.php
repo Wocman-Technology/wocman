@@ -1,12 +1,15 @@
 <?php
 require '../database/xc4f_config.php';
+
+require WOCMAN_DIR.WOCMAN_PREFIX_FILE.'function.php';
+
 /**
  * wocman
  *
  * Details: This file is part of the wocman technology file
  * Author: Justice
  *
- */
+*/
 
 require 'route.php';
 
@@ -45,6 +48,8 @@ if (defined(trim($_r,'?'))) {
 		}
 		
 	}
+	
+
 	$wocman_route = "&wocman_route=".wocman_route;
 	$field_string = '';
 	$push = [];
@@ -56,6 +61,37 @@ if (defined(trim($_r,'?'))) {
 	array_push($push, $wocman_route);
 	rtrim($field_string, '&');
 	define("route", website_link."controller/?".$x[1].$wocman_route);
+
+
+
+	//authenticating the user type
+	$getAuthKey = explode('&', route);
+	//looping throught the variables
+	$getAuthKey = isset($getAuthKey)?$getAuthKey:'none=none';
+	foreach ($getAuthKey as $eachParam) {
+		$chekAuthKey = explode('=', $eachParam);
+		if ($chekAuthKey[0] == 'uuidToken') {
+			$dataforCheck = $chekAuthKey[1];
+		}
+	}
+	$data = isset($dataforCheck)?$dataforCheck:'';
+
+	if ($x[3] == "workman") {
+		if((boolean)$general->verifyWocman($tbl_workmen,wocman_token_column,$data) === false){
+			echo json_encode(['wocman_status' => "Workman Unique verification failure",]);
+			return false;
+		}
+	}elseif($x[3] == "customer"){
+		if((boolean)$general->verifyCustomer($tbl_customer,wocman_token_column,$data) === false){
+			echo json_encode(['wocman_status' => "Customer Unique verification failure",]);
+			return false;
+		}
+	}elseif($x[3] == "admin"){
+		if((boolean)$general->verifyWocman($tbl_wocman,wocman_token_column,$data) === false){
+			echo json_encode(['wocman_status' => "Admin Unique verification failure",]);
+			return false;
+		}
+	}
 
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, route);
@@ -104,7 +140,5 @@ if (defined(trim($_r,'?'))) {
 }else{
 	echo json_encode(['wocman_status' => "Route Does Not Exist",]);
 }
-
-
 
 ?>

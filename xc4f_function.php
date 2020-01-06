@@ -153,4 +153,71 @@ function route($method,$url,$name){
         return "Invalid Route";
     }
 }
+/**
+ * 
+ //setting up parameters
+*/
+class General
+{
+    
+    private $host = server;
+    private $database = serverDatabase;
+    private $user = serverUser;
+    private $password = serverPassword;   
+    
+    function __construct() {
+        $this->conn = $this->connectDB();
+    }
+    
+    function connectDB() {
+        $conn = mysqli_connect($this->host,$this->user,$this->password,$this->database);
+        return $conn;
+    }
+
+    public function verifyCustomer($tbl,$column,$data){
+        //purify parameters
+            $data = mysqli_real_escape_string($this->conn, $data);
+        //query the database
+            $sql = $this->conn->query("SELECT * FROM $tbl WHERE `$column` = '$data' ");
+            $countNumberOfReturns = $sql->num_rows;
+
+        //return variables
+            if ($countNumberOfReturns != 1) {
+                return false;
+            }else{
+                return true;
+            }
+
+    }
+    public function verifyWocman($tbl,$column,$data){
+        //purify parameters
+            $data = mysqli_real_escape_string($this->conn, $data);
+        //query the database
+            $sql = $this->conn->query("SELECT * FROM $tbl WHERE `$column` = '$data' ");
+            $countNumberOfReturns = $sql->num_rows;
+
+        //return variables
+            if ($countNumberOfReturns != 1) {
+                return false;
+            }else{
+                return true;
+            }
+    }
+    public function verifyWorkman($tbl,$column,$data){
+        //purify parameters
+            $data = mysqli_real_escape_string($this->conn, $data);
+        //query the database
+            $sql = $this->conn->query("SELECT * FROM $tbl WHERE `$column` = '$data' ");
+            $countNumberOfReturns = $sql->num_rows;
+
+        //return variables
+            if ($countNumberOfReturns != 1) {
+                return false;
+            }else{
+                return true;
+            }
+    }
+}
+
+$general = new General();
 ?>

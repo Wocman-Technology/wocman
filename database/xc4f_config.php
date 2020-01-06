@@ -24,16 +24,23 @@ define('wocman_secret', 'sec_ty5678fdcvdsdSFGfdfbvnv_wocman');
 define('routes_Auth_wocman_admin', 'gfksfshjdnvxisdsdgrevv343432QWSDSsdfgsdfjkdfjd');
 define('routes_Auth_wocman_cutomer', 'gfksfshjdnvxisdfhsdhfjkdmbsdFDGDFHGssd42312dfsddfsdZ');
 define('routes_Auth_wocman_workman', 'gfksfshjdnv123AsdSwAQxisdfhsdhfjkdmbsdfgsdfjkdfjd');
+define('wocman_token_column', 'wocmanVat2ooff_tokenXDF');
+
+//db parameters
+define('server', 'localhost');
+define('serverDatabase', WOCMAN_PREFIX.'work');
+define('serverUser', 'root');
+define('serverPassword', '');
 
 if(!defined('WOCMAN_DIR'))
 {
  define('WOCMAN_DIR', dirname(dirname(__FILE__))."/");
 }
 
-$dbE = WOCMAN_PREFIX."work";
-$user = "root";
-$host = "localhost";
-$pass = "";
+$host = server;
+$dbE = serverDatabase;
+$user = serverUser;
+$pass = serverPassword;
 
 
 $tbl_temp = WOCMAN_PREFIX."temp";
@@ -112,7 +119,7 @@ $exec_updater = "CREATE TABLE IF NOT EXISTS `$tbl_updater` (
 $mysqli->query($exec_updater);
 
 $queries = array(
-	'query_oo1' => 'CREATE TABLE IF NOT EXISTS '.$tbl_wocman.' (`id` int(11) UNSIGNED AUTO_INCREMENT,`email` varchar(225) NOT NULL,`name` varchar(225) NOT NULL,`phone` varchar(225) NOT NULL,`password` varchar(225) NOT NULL,`image` varchar(225)  NULL,`location` varchar(225) NOT NULL,`secret_key` varchar(225) NOT NULL,`date` timestamp,PRIMARY KEY (`id`)) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1'
+	'query_oo1' => 'CREATE TABLE IF NOT EXISTS '.$tbl_wocman.' (`id` int(11) UNSIGNED AUTO_INCREMENT,`email` varchar(225) NOT NULL,`name` varchar(225) NOT NULL,`phone` varchar(225) NOT NULL,`password` varchar(225) NOT NULL,`image` varchar(225)  NULL,`location` varchar(225) NOT NULL,`secret_key` varchar(225) NOT NULL,`date` timestamp,PRIMARY KEY (`id`)) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1', 'query_oo2' => 'ALTER TABLE '.$tbl_workmen.' ADD '.wocman_token_column.' VARCHAR(225) NULL', 'query_oo3' => 'ALTER TABLE '.$tbl_wocman.' ADD '.wocman_token_column.' VARCHAR(225) NULL', 'query_oo4' => 'ALTER TABLE '.$tbl_customer.' ADD '.wocman_token_column.' VARCHAR(225) NULL'
 );
 
 foreach ($queries as $key => $value) {
@@ -124,5 +131,18 @@ foreach ($queries as $key => $value) {
 	}
 }
 
+function checkPastExistence($mysqli,$tbl,$columnName,$tblOld){
+	$r = $mysqli->query("SHOW COLUMNS FROM `$tbl` LIKE '$columnName' ");
+	if (!$r OR !$r->num_rows) {
+		//do something here
+		$mysqli->query("DROP TABLE `".$tblOld."` ");
+		$mysqli->query("RENAME TABLE `".$tbl."` TO `".$tblOld."` ");
+		$mysqli->query("CREATE TABLE IF NOT EXISTS `".$tbl."` (`id` int(11) UNSIGNED AUTO_INCREMENT,`email` varchar(225) NOT NULL,`name` varchar(225) NOT NULL,`phone` varchar(225) NOT NULL,`password` varchar(225) NOT NULL,`image` varchar(225)  NULL,`location` varchar(225) NOT NULL,`secret_key` varchar(225) NOT NULL,`date` timestamp,`".wocman_token_column."` varchar(225) NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1");
+	}
+}
+
+checkPastExistence($mysqli,$tbl_workmen,wocman_token_column,$tbl_workmen."_oldxs");
+checkPastExistence($mysqli,$tbl_wocman,wocman_token_column,$tbl_wocman."_oldxs");
+checkPastExistence($mysqli,$tbl_customer,wocman_token_column,$tbl_customer."_oldxs");
 
 ?>
