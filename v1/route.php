@@ -10,15 +10,15 @@
 //routes
 
 //workman route
-define("workman_login", "POST,workman_login,false,workman");
-define("workman_register", "POST,workman_register,false,workman");
+define("workman_login", "POST,workman_login,false,NoAuthHere");
+define("workman_register", "POST,workman_register,false,NoAuthHere");
 define("workman_upload", "POST,workman_upload,false,workman");
 define("workman_attach", "POST,workman_upload_photo,false,workman");
 
 
 //customer route
-define("customer_register", "POST,customer_register,false,customer");
-define("customer_login", "POST,customer_login,false,customer");
+define("customer_register", "POST,customer_register,false,customerNoAuthHere");
+define("customer_login", "POST,customer_login,false,customerNoAuthHere");
 
 
 

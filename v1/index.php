@@ -2,6 +2,7 @@
 require '../database/xc4f_config.php';
 
 require WOCMAN_DIR.WOCMAN_PREFIX_FILE.'function.php';
+require WOCMAN_DIR.WOCMAN_PREFIX_FILE.'clean.php';
 
 /**
  * wocman
@@ -17,19 +18,6 @@ require 'route.php';
 define('COOKIE_FILE', website_link.'cookie.txt');
 
 
-function getCurrentUri(){
-    $basepath = implode('/', array_slice(explode('/', $_SERVER['SCRIPT_NAME']), 0, -01)).'/';
-    $uri = substr($_SERVER['REQUEST_URI'], strlen($basepath));
-    // return $uri;
-    $route = explode('/', $uri);
-    if (!($route[0])) {
-        $uri = '';
-    }else{
-        $routes = explode('/', $uri);
-        $uri = $routes[0];
-    }
-    return $uri;
-}
 $_r = getCurrentUri();
 
 
@@ -61,7 +49,6 @@ if (defined(trim($_r,'?'))) {
 	array_push($push, $wocman_route);
 	rtrim($field_string, '&');
 	define("route", website_link."controller/?".$x[1].$wocman_route);
-
 
 
 	//authenticating the user type

@@ -16,7 +16,7 @@ $_SESSION['token']  = isset($_SESSION['token'])?$_SESSION['token']:getToken(120)
 if (isset($_GET['wocman_route'])?$_GET['wocman_route']:'' == (string)wocman_route) {
     //var_dump($_SESSION);
 }else{
-    echo json_encode(["status" => "Invalid access"]);
+    echo json_encode(["status" => "Invalid access route"]);
     return false;
 }
 
@@ -67,7 +67,7 @@ if ($routes == "?customer_register") {
     $key = password_hash($cusomer_password, PASSWORD_DEFAULT);
 
     $url_email = website_link."verify/?url=".$key.WOCMAN_SPLIT.$customer_email_address.WOCMAN_SPLIT.$type;
-    //var_dump($url_email); 
+    var_dump($url_email); 
 
     $bodyTitle = "Wocman Customer Account Confirmatoin";
     $subject = "Account Confirmatoin";
@@ -82,33 +82,33 @@ if ($routes == "?customer_register") {
                             <br/>
                             <br/>'; 
 
-    include WOCMAN_DIR."emailhandler.php";
+        include WOCMAN_DIR."emailhandler.php";
 
-    $myObj = new stdClass();
-    $myObj->row = "none";
-    $myObj->count = 0;
-    $myObj->status = true;
-    $myObj->status_code = "Successful";
-    $myJSON = json_encode($myObj);
-    echo $myJSON;
-     }else{
-    $myObj = new stdClass();
-    $myObj->row = "none";
-    $myObj->count = 0;
-    $myObj->status = false;
-    $myObj->status_code = "failed to register";
-    $myJSON = json_encode($myObj);
-    echo $myJSON;
+        $myObj = new stdClass();
+        $myObj->row = "none";
+        $myObj->count = 0;
+        $myObj->status = true;
+        $myObj->status_code = "Successful";
+        $myJSON = json_encode($myObj);
+        echo $myJSON;
+         }else{
+        $myObj = new stdClass();
+        $myObj->row = "none";
+        $myObj->count = 0;
+        $myObj->status = false;
+        $myObj->status_code = "failed to register";
+        $myJSON = json_encode($myObj);
+        echo $myJSON;
+        }
+    }else{
+        $myObj = new stdClass();
+        $myObj->row = null;
+        $myObj->count = null;
+        $myObj->status = null;
+        $myObj->status_code = "user already exist";
+        $myJSON = json_encode($myObj);
+        echo $myJSON;
     }
-}else{
-    $myObj = new stdClass();
-    $myObj->row = null;
-    $myObj->count = null;
-    $myObj->status = null;
-    $myObj->status_code = "user already exist";
-    $myJSON = json_encode($myObj);
-    echo $myJSON;
-}
     
 }elseif($routes == "?workman_register") {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -322,7 +322,10 @@ if ($routes == "?customer_register") {
     if ($check->num_rows == 1) {
         $row_fetch = $check->fetch_assoc();
         $psd = $row_fetch['password'];
+        $userId = $row_fetch['id'];
+        unset($row_fetch['id']);
         if (password_verify($cusomer_password, $psd) == 1) {
+            $general->updateToken($tbl_customer,wocman_token_column,getToken(120),$userId);
             $myObj = new stdClass();
             $myObj->row = $row_fetch;
             $myObj->count = $check->num_rows;
@@ -375,7 +378,10 @@ if ($routes == "?customer_register") {
     if ($check->num_rows == 1) {
         $row_fetch = $check->fetch_assoc();
         $psd = $row_fetch['password'];
+        $userId = $row_fetch['id'];
+        unset($row_fetch['id']);
         if (password_verify($cusomer_password, $psd) == 1) {
+            $general->updateToken($tbl_workmen,wocman_token_column,getToken(120),$userId);
             $myObj = new stdClass();
             $myObj->row = $row_fetch;
             $myObj->count = $check->num_rows;
@@ -430,9 +436,12 @@ if ($routes == "?customer_register") {
         $row_fetch = $check->fetch_assoc();
         $psd = $row_fetch['password'];
         $secret = $row_fetch['secret_key'];
+        $userId = $row_fetch['id'];
+        unset($row_fetch['id']);
+
         if (password_verify($cusomer_password, $psd) == 1) {
             if ($secret == wocman_secret) {
-
+                $general->updateToken($tbl_wocman,wocman_token_column,getToken(120),$userId);
 
                 $myObj = new stdClass();
                 $myObj->row = $row_fetch;

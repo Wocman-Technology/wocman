@@ -119,7 +119,7 @@ $exec_updater = "CREATE TABLE IF NOT EXISTS `$tbl_updater` (
 $mysqli->query($exec_updater);
 
 $queries = array(
-	'query_oo1' => 'CREATE TABLE IF NOT EXISTS '.$tbl_wocman.' (`id` int(11) UNSIGNED AUTO_INCREMENT,`email` varchar(225) NOT NULL,`name` varchar(225) NOT NULL,`phone` varchar(225) NOT NULL,`password` varchar(225) NOT NULL,`image` varchar(225)  NULL,`location` varchar(225) NOT NULL,`secret_key` varchar(225) NOT NULL,`date` timestamp,PRIMARY KEY (`id`)) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1', 'query_oo2' => 'ALTER TABLE '.$tbl_workmen.' ADD '.wocman_token_column.' VARCHAR(225) NULL', 'query_oo3' => 'ALTER TABLE '.$tbl_wocman.' ADD '.wocman_token_column.' VARCHAR(225) NULL', 'query_oo4' => 'ALTER TABLE '.$tbl_customer.' ADD '.wocman_token_column.' VARCHAR(225) NULL'
+	'query_oo1' => 'CREATE TABLE IF NOT EXISTS '.$tbl_wocman.' (`id` int(11) UNSIGNED AUTO_INCREMENT,`email` varchar(225) NOT NULL,`name` varchar(225) NOT NULL,`phone` varchar(225) NOT NULL,`password` varchar(225) NOT NULL,`image` varchar(225)  NULL,`location` varchar(225) NOT NULL,`secret_key` varchar(225) NOT NULL,`date` timestamp,PRIMARY KEY (`id`)) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1'
 );
 
 foreach ($queries as $key => $value) {

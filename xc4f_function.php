@@ -217,6 +217,10 @@ class General
                 return true;
             }
     }
+    public function updateToken($tbl,$column,$data,$id){
+        //query the database
+        $sql = $this->conn->query("UPDATE  `$tbl` SET `$column` = '$data' WHERE `id` = '$id' ");  
+    }
 }
 
 $general = new General();
