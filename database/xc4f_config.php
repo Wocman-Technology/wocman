@@ -1,15 +1,14 @@
 <?php
-$lifetime = "60000";
-session_set_cookie_params($lifetime);
-session_start();
 /**
  * wocman
  *
  * Details: This file is part of the wocman technology file
- * Author: Justice
+ * Author: Ugbogu Justice, 08138184872
  *
- */
-
+*/
+$lifetime = "60000";
+session_set_cookie_params($lifetime);
+session_start();
 
 // Database information
 

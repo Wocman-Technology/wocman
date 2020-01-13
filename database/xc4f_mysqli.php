@@ -1,12 +1,11 @@
 <?php
-
 /**
  * wocman
  *
  * Details: This file is part of the wocman technology file
- * Author: Justice
+ * Author: Ugbogu Justice, 08138184872
  *
- */
+*/
 
 // Create the database class
 class MySqliServer

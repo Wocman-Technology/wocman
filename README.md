@@ -1,3 +1,9 @@
+# * wocman
+# *
+# * Details: This file is part of the wocman technology file
+# * Author: Ugbogu Justice, 08138184872
+# *
+
 # wocman
 
 #  getting the API documentation ready

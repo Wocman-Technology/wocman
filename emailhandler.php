@@ -1,15 +1,15 @@
 <?php
-
-
 /**
  * wocman
  *
  * Details: This file is part of the wocman technology file
- * Author: Justice
+ * Author: Ugbogu Justice, 08138184872
  *
- */
+*/
 
-    /*$emailaddress = $email;
+
+/**
+    $emailaddress = $email;
     $emailSubject = $subject;
     $bodyTitle = "";
     $bodyText = '<h3>Welcome, '. $name.'!</h3>
@@ -19,10 +19,11 @@
                             <br/>
                             <br/>
                             <center>
-                                <a href="https://www.ndifre.com/activate.php?add='. $emailaddress .'&rlink='. $link .'&type=tutor"><button style="padding:10px;background-color:#022F8E;color:white;border:0px;font-family:\'Manjari\',sans-serif;outline:none;font-weight:bold">Activate Account</button></a></center>
+                                <a href="https://www.facebook.com/activate.php?add='. $emailaddress .'&rlink='. $link .'&type=tutor"><button style="padding:10px;background-color:#022F8E;color:white;border:0px;font-family:\'Manjari\',sans-serif;outline:none;font-weight:bold">Activate Account</button></a></center>
                             <br/>
                             <br/>';
-                            */
+*/
+
 function emailHandler($emailaddress,$subject,$bodyTitle,$bodyText)
 {
    

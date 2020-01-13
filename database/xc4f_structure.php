@@ -1,16 +1,11 @@
 <?php
-
-
 /**
  * wocman
  *
  * Details: This file is part of the wocman technology file
- * Author: Justice
+ * Author: Ugbogu Justice, 08138184872
  *
- */
-
-
-
+*/
 
 $exec_temp= "CREATE TABLE IF NOT EXISTS `$tbl_temp` (
     `id` int(11) NOT NULL AUTO_INCREMENT,

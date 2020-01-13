@@ -3,11 +3,9 @@
  * wocman
  *
  * Details: This file is part of the wocman technology file
- * Author: Justice
+ * Author: Ugbogu Justice, 08138184872
  *
- */
-
- 
+*/
 header("location:../");
 die();
 
@@ -62,7 +60,6 @@ die();
 // 		//success
 // 		{
 // 			"row":{
-// 				"id":"1",
 // 				"email":"just2ice@gmail.com",
 // 				"name":"Justice George",
 // 				"phone":"08138184872",
@@ -70,6 +67,7 @@ die();
 // 				"active":null,
 // 				"image":null,
 // 				"location":null,
+//				"wocmanVat2ooff_tokenXDF":"$2y$10$a\/q7IIlsaCAH0kmu5kc72fBzukmz90qLjDe$2y$10$a\/q7IIlsjyy.MOFVkiLGw.8dIOaCAH0kmu5kc72fBzukmz90qLjDe",
 // 				"date":"2019-12-09 15:04:08"
 // 			},
 // 			"count":1,
@@ -131,7 +129,6 @@ die();
 // 		//success
 // 		{
 // 			"row":{
-// 				"id":"1",
 // 				"email":"justccice@gmail.com",
 // 				"name":"Justice George",
 // 				"phone":"08138184872",
@@ -140,6 +137,7 @@ die();
 // 				"active":"1",
 // 				"image":null,
 // 				"location":"aja",
+//				"wocmanVat2ooff_tokenXDF":"$2y$10$a\/q7IIlsaCAH0kmu5kc72fBzukmz90qLjDe$2y$10$a\/q7IIlsjyy.MOFVkiLGw.8dIOaCAH0kmu5kc72fBzukmz90qLjDe",
 // 				"date":"2019-12-09 15:23:52"
 // 			},
 // 			"count":1,
@@ -283,14 +281,13 @@ die();
 // 		{
 // 			"row":
 				// {
-				// 	"id":"1",
 				// 	"email":"justccice@gmail.com",
 				// 	"name":"Justice George",
 				// 	"phone":"08138184872",
 				// 	"password":"$2y$10$hms.druLehfo3yU6bKSc6ubDjWr74ansE2LGHS6mgrHMqs7ei5gGi",
 				// 	"image":null,
 				// 	"location":"",
-				// 	"secret_key":"sec_ty5678fdcvdsdSFGfdfbvnv_wocman",
+				// 	"wocmanVat2ooff_tokenXDF":"$2y$10$a\/q7IIlsaCAH0kmu5kc72fBzukmz90qLjDe$2y$10$a\/q7IIlsjyy.MOFVkiLGw.8dIOaCAH0kmu5kc72fBzukmz90qLjDe",
 				// 	"date":"2019-12-10 01:07:57"
 				// },
 				// "count":1,

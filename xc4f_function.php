@@ -3,9 +3,9 @@
  * wocman
  *
  * Details: This file is part of the wocman technology file
- * Author: Justice
+ * Author: Ugbogu Justice, 08138184872
  *
- */
+*/
 
 //used in personality
 function image($name,$type,$temp_name,$error,$imagesize,$target_dir,$size,$extentions,$newimage){
@@ -177,6 +177,10 @@ class General
     public function verifyCustomer($tbl,$column,$data){
         //purify parameters
             $data = mysqli_real_escape_string($this->conn, $data);
+        //query session 
+            if ($_SESSION['routes_Auth_wocman_cutomer'] !=  $data) {
+                return false;
+            }
         //query the database
             $sql = $this->conn->query("SELECT * FROM $tbl WHERE `$column` = '$data' ");
             $countNumberOfReturns = $sql->num_rows;
@@ -192,6 +196,10 @@ class General
     public function verifyWocman($tbl,$column,$data){
         //purify parameters
             $data = mysqli_real_escape_string($this->conn, $data);
+        //query session 
+            if ($_SESSION['routes_Auth_wocman_admin'] !=  $data) {
+                return false;
+            }
         //query the database
             $sql = $this->conn->query("SELECT * FROM $tbl WHERE `$column` = '$data' ");
             $countNumberOfReturns = $sql->num_rows;
@@ -206,6 +214,10 @@ class General
     public function verifyWorkman($tbl,$column,$data){
         //purify parameters
             $data = mysqli_real_escape_string($this->conn, $data);
+        //query session 
+            if ($_SESSION['routes_Auth_wocman_workman'] !=  $data) {
+                return false;
+            }
         //query the database
             $sql = $this->conn->query("SELECT * FROM $tbl WHERE `$column` = '$data' ");
             $countNumberOfReturns = $sql->num_rows;

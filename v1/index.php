@@ -1,16 +1,15 @@
 <?php
-require '../database/xc4f_config.php';
-
-require WOCMAN_DIR.WOCMAN_PREFIX_FILE.'function.php';
-require WOCMAN_DIR.WOCMAN_PREFIX_FILE.'clean.php';
-
 /**
  * wocman
  *
  * Details: This file is part of the wocman technology file
- * Author: Justice
+ * Author: Ugbogu Justice, 08138184872
  *
 */
+require '../database/xc4f_config.php';
+
+require WOCMAN_DIR.WOCMAN_PREFIX_FILE.'function.php';
+require WOCMAN_DIR.WOCMAN_PREFIX_FILE.'clean.php';
 
 require 'route.php';
 
@@ -26,6 +25,8 @@ if (defined(trim($_r,'?'))) {
 	unset($x);
 	$a = constant(trim($_r,'?'));
 	$x  = explode(",", $a);
+
+
 	if ($x[2] == 'true') {
 		
 		if (isset($_SESSION['routes_Auth_wocman_'.$x[3]])?$_SESSION['routes_Auth_wocman_'.$x[3]]:'' ==  constant('routes_Auth_wocman_'.$x[3])) {
@@ -64,7 +65,7 @@ if (defined(trim($_r,'?'))) {
 	$data = isset($dataforCheck)?$dataforCheck:'';
 
 	if ($x[3] == "workman") {
-		if((boolean)$general->verifyWocman($tbl_workmen,wocman_token_column,$data) === false){
+		if((boolean)$general->verifyWorkman($tbl_workmen,wocman_token_column,$data) === false){
 			echo json_encode(['wocman_status' => "Workman Unique verification failure",]);
 			return false;
 		}
@@ -87,7 +88,7 @@ if (defined(trim($_r,'?'))) {
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $field_string);
 		curl_setopt($ch, CURLOPT_COOKIEJAR, COOKIE_FILE);
 		curl_setopt($ch, CURLOPT_COOKIEFILE, COOKIE_FILE);
-		 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		// curl_setopt($ch, CURLOPT_HEADER, true);
 		$result = curl_exec($ch);
 		curl_setopt($ch, CURLOPT_COOKIESESSION, true);
@@ -95,13 +96,17 @@ if (defined(trim($_r,'?'))) {
 		echo $result;
 		$check = (array)json_decode($result);
 		if (isset($check['status'])?$check['status']:'' == "wocman_logedin") {
-			$_SESSION['routes_Auth_wocman_admin'] = routes_Auth_wocman_admin;
+			$therow = (array)($check['row']);
+			$_SESSION['routes_Auth_wocman_admin'] = $therow[wocman_token_column];
 		}
 		if (isset($check['status'])?$check['status']:'' == "customer_logedin") {
-			$_SESSION['routes_Auth_wocman_cutomer'] = routes_Auth_wocman_cutomer;
+			$therow = (array)($check['row']);
+			$_SESSION['routes_Auth_wocman_cutomer'] = $therow[wocman_token_column];
+			// var_dump($_SESSION['routes_Auth_wocman_cutomer']);
 		}
 		if (isset($check['status'])?$check['status']:'' == "workman_logedin") {
-			$_SESSION['routes_Auth_wocman_workman'] = routes_Auth_wocman_workman;
+			$therow = (array)($check['row']);
+			$_SESSION['routes_Auth_wocman_workman'] = $therow[wocman_token_column];
 		}
 
 	}elseif($_SERVER['REQUEST_METHOD'] === 'GET' &&  trim($x[0]) === $_SERVER['REQUEST_METHOD']){

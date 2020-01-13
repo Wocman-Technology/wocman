@@ -1,15 +1,16 @@
 <?php
-require '../database/xc4f_config.php';
-require WOCMAN_DIR.'database/'.WOCMAN_PREFIX_FILE.'mysqli.php';
-require WOCMAN_DIR.WOCMAN_PREFIX_FILE.'clean.php';
-require WOCMAN_DIR.WOCMAN_PREFIX_FILE.'function.php';
 /**
  * wocman
  *
  * Details: This file is part of the wocman technology file
- * Author: Justice
+ * Author: Ugbogu Justice, 08138184872
  *
 */
+require '../database/xc4f_config.php';
+require WOCMAN_DIR.'database/'.WOCMAN_PREFIX_FILE.'mysqli.php';
+require WOCMAN_DIR.WOCMAN_PREFIX_FILE.'clean.php';
+require WOCMAN_DIR.WOCMAN_PREFIX_FILE.'function.php';
+
 define('COOKIE_FILE', 'cookie.txt');
 $_SESSION['token']  = isset($_SESSION['token'])?$_SESSION['token']:getToken(120);
 
@@ -435,12 +436,11 @@ if ($routes == "?customer_register") {
     if ($check->num_rows == 1) {
         $row_fetch = $check->fetch_assoc();
         $psd = $row_fetch['password'];
-        $secret = $row_fetch['secret_key'];
         $userId = $row_fetch['id'];
         unset($row_fetch['id']);
 
         if (password_verify($cusomer_password, $psd) == 1) {
-            if ($secret == wocman_secret) {
+
                 $general->updateToken($tbl_wocman,wocman_token_column,getToken(120),$userId);
 
                 $myObj = new stdClass();
@@ -451,16 +451,6 @@ if ($routes == "?customer_register") {
                
                 $myJSON = json_encode($myObj);
                 echo $myJSON;
-            }else{
-                $myObj = new stdClass();
-                $myObj->row = false;
-                $myObj->count = false;
-                $myObj->status = false;
-                $myObj->status_code = "Authourization Failed";
-            
-                $myJSON = json_encode($myObj);
-                echo $myJSON;
-            }
         }else{
             $myObj = new stdClass();
             $myObj->row = "none";
@@ -497,7 +487,7 @@ if ($routes == "?customer_register") {
     }
     extract(${"_".$_SERVER['REQUEST_METHOD']});
         if (routes_Auth_wocman_workman) {
-            $workman_id = $workman_id;
+            $workman_id = $uuidToken;
               $image[] = $_FILES['certificate'];
               $target_dir = "../uploads/workman_qualification/";
               $size = 2000000;
@@ -508,7 +498,7 @@ if ($routes == "?customer_register") {
               if (!empty($image) AND trim($image) != 'error') {
                  compress_image($image, $image, 90);
                   $image = str_replace('../', '', $image);
-                  $mysqli->query("UPDATE $tbl_workmen SET `qualification` = '$image' WHERE `id` = '$workman_id' ");
+                  $mysqli->query("UPDATE $tbl_workmen SET `qualification` = '$image' WHERE `".wocman_token_column."` = '$workman_id' ");
                     $myObj = new stdClass();
                     $myObj->row = 'none';
                     $myObj->count = 'nono';
@@ -553,7 +543,7 @@ if ($routes == "?customer_register") {
     }
     extract(${"_".$_SERVER['REQUEST_METHOD']});
         if (routes_Auth_wocman_workman) {
-                $workman_id = $workman_id;
+                $workman_id = $uuidToken;
               $image[] = $_FILES['photo'];
               $target_dir = "../uploads/workmanPhoto/";
               $size = 2000000;
@@ -564,7 +554,7 @@ if ($routes == "?customer_register") {
               if (!empty($image) AND trim($image) != 'error') {
                  compress_image($image, $image, 90);
                   $image = str_replace('../', '', $image);
-                  $mysqli->query("UPDATE $tbl_workmen SET `image` = '$image' WHERE `id` = '$workman_id' ");
+                  $mysqli->query("UPDATE $tbl_workmen SET `image` = '$image' WHERE `".wocman_token_column."` = '$workman_id' ");
                     $myObj = new stdClass();
                     $myObj->row = 'none';
                     $myObj->count = 'nono';
@@ -609,7 +599,7 @@ if ($routes == "?customer_register") {
     }
     extract(${"_".$_SERVER['REQUEST_METHOD']});
         if (routes_Auth_wocman_admin) {
-                $workman_id = $workman_id;
+                $workman_id = $uuidToken;
               $image[] = $_FILES['photo'];
               $target_dir = "../uploads/";
               $size = 2000000;
@@ -620,7 +610,7 @@ if ($routes == "?customer_register") {
               if (!empty($image) AND trim($image) != 'error') {
                  compress_image($image, $image, 90);
                   $image = str_replace('../', '', $image);
-                  $mysqli->query("UPDATE $tbl_wocman SET `image` = '$image' WHERE `id` = '$workman_id' ");
+                  $mysqli->query("UPDATE $tbl_wocman SET `image` = '$image' WHERE `".wocman_token_column."` = '$workman_id' ");
                     $myObj = new stdClass();
                     $myObj->row = 'none';
                     $myObj->count = 'nono';

@@ -3,9 +3,9 @@
  * wocman
  *
  * Details: This file is part of the wocman technology file
- * Author: Justice
+ * Author: Ugbogu Justice, 08138184872
  *
- */
+*/
 
 require '../database/xc4f_config.php';
 
@@ -225,7 +225,7 @@ if ($x[2] == "Workman") {
              $checks = $mysqli->query("SELECT * FROM $tbl_wocman WHERE email = '$x[1]' ");
             if ($checks->num_rows < 1) {
 
-            if($mysqli->query("INSERT INTO $tbl_wocman(`email`,`name`,`phone`,`password`,`secret_key`,`".wocman_token_column."`) VALUES('$email','$name','$phone','".trim($x[0],'?')."','$secret_key','$woc_token') ")){
+            if($mysqli->query("INSERT INTO $tbl_wocman(`email`,`name`,`phone`,`password`,`".wocman_token_column."`) VALUES('$email','$name','$phone','".trim($x[0],'?')."', '$woc_token') ")){
                 $mysqli->query("DELETE FROM $tbl_temp WHERE id='".$row_fetch['id']."' ");
 
         $url_email = website_link."/wocman_login";
