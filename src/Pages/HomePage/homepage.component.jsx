@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Header } from "../../components/header/header.component";
+import { Footer } from "../../components/footer/footer.component";
 import HeaderImage from "../../assets/header.jpg";
 import { HeaderForm } from "../../components/homepage-component/header-form/header-form.component";
 import { NavBar } from "../../components/navbar/navbar.component";
@@ -30,5 +31,6 @@ export const HomePage = () => (
     <WorksOnDemand />
     <Faq />
     <NewsLetter />
+    <Footer/>
   </>
 );

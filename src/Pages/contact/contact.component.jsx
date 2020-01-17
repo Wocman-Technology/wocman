@@ -2,6 +2,7 @@ import React from "react";
 
 import { ContactHeaderWrapper } from "./contact.styles";
 import { NavBar } from "../../components/navbar/navbar.component";
+import { Footer } from "../../components/footer/footer.component";
 import { NewsLetter } from "../../components/newsletter/newsletter.component";
 import { ContactForm } from "../../components/contact/form/form.component";
 import MapContainer from "../../components/contact/maps/maps";
@@ -19,5 +20,6 @@ export const Contact = () => (
     <ContactForm />
     <MapContainer />
     <NewsLetter />
+    <Footer/>
   </>
 );

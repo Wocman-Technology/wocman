@@ -1,6 +1,7 @@
 import React from "react";
 import HeaderImage from "../../assets/about-us.jpg";
 import { NavBar } from "../../components/navbar/navbar.component";
+import { Footer } from "../../components/footer/footer.component";
 import { NewsLetter } from "../../components/newsletter/newsletter.component";
 import { FeaturedServices } from "../../components/services-component/featured-services/featured-services.component";
 import { Gardener } from "../../components/gardener-component/gardener.component";
@@ -25,5 +26,6 @@ export const Services = () => (
     <Gardener />
     <ServiceSection />
     <NewsLetter />
+    <Footer/>
   </>
 );

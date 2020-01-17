@@ -1,6 +1,7 @@
 import React from "react";
 
 import { NewsLetter } from "../../components/newsletter/newsletter.component";
+import { Footer } from "../../components/footer/footer.component";
 import { NavBar } from "../../components/navbar/navbar.component";
 import { AboutUsSection } from "../../components/about-us-component/about-section/about-section.component";
 import { Advisory } from "../../components/about-us-component/advisory/advisory.component";
@@ -21,5 +22,6 @@ export const AboutUs = () => (
     <Advisory />
     <Team />
     <NewsLetter />
+    <Footer/>
   </>
 );
