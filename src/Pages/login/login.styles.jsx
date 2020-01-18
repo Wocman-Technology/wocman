@@ -19,6 +19,7 @@ export const Loginwrapper = styled.body`
         display: flex;
         padding: 4rem 5rem;
         margin: 15rem auto 0;
+        justify-content: space-between;
         div:nth-child(1) {
             width: 50%;
         h2 {
@@ -35,14 +36,15 @@ export const Loginwrapper = styled.body`
         }
             }
         div:nth-child(2){
-            width: 50%;
-            padding: 3rem 1rem;
+            width: 40%;
+            padding: 3rem 0.5rem;
             align-items: center;
             background: #FFFFFF;
             border-radius: 10px;
             div {
                 display: block;
                 margin: 0 auto;
+                color: #552d1e;
                 & > * {
                     margin-top: 1rem;
                     display: block;
@@ -52,7 +54,7 @@ export const Loginwrapper = styled.body`
                 }
                 .google {
                     display: flex;
-                    width: 100%;
+                    width: 70%;
                     &:hover {
                         div, button {
                         background: #FFF;
@@ -95,6 +97,38 @@ export const SignUpButton = styled(CustomButton)`
 
 export const FormWrapper = styled.div`
     height: 80%;
+    width: 80% !important;
     margin: auto;
     text-align: center;
+    justify-content: center;
+
+.divider {
+    display: block;
+    overflow: hidden;
+    margin: 0 auto;
+    white-space: nowrap
+}
+
+.divider > span {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    width: 30px
+}
+
+div.divider > span:before, div.divider > span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    border-top: solid 1px #D3D3D3
+}
+
+div.divider>span:before {
+    right: 100%
+}
+
+div.divider>span:after {
+    left: 100%
+}
 `

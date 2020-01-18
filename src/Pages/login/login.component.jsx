@@ -28,7 +28,7 @@ export const Login = () => (
             <div><i className="fab fa-google"></i></div>
             <SignUpButton><span>Sign in with Gmail</span></SignUpButton>
           </div>{" "}
-          <div>
+          <div className="divider">
             <span>OR</span>
           </div>
           <form className=""></form>
