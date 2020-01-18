@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import AuthImage from "../../assets/bg-image.jpg";
+import { CustomButton } from "../../components/custom-button.component";
 
 export const Loginwrapper = styled.body`
     height: 100vh;
@@ -34,3 +35,13 @@ export const Loginwrapper = styled.body`
     }
     }
 `;
+
+export const SignUpButton = styled(CustomButton)`
+    width: 300px;
+`
+
+export const FormWrapper = styled.div`
+    width: 80%;
+    height: 80%;
+    margin: auto;
+`
