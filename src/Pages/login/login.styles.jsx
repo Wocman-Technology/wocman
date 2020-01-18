@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import AuthImage from "../../assets/bg-image.jpg";
-import { CustomButton } from "../../components/custom-button.component";
+import { CustomButton } from "../../components/custom-button/custom-button.component";
 
 export const Loginwrapper = styled.body`
     height: 100vh;
