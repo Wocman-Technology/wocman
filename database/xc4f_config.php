@@ -6,8 +6,8 @@
  * Author: Ugbogu Justice, 08138184872
  *
 */
-$lifetime = "60000";
-session_set_cookie_params($lifetime);
+// $lifetime = "60000";
+// session_set_cookie_params($lifetime);
 session_start();
 
 // Database information
@@ -23,6 +23,7 @@ define('wocman_secret', 'sec_ty5678fdcvdsdSFGfdfbvnv_wocman');
 define('routes_Auth_wocman_admin', 'gfksfshjdnvxisdsdgrevv343432QWSDSsdfgsdfjkdfjd');
 define('routes_Auth_wocman_cutomer', 'gfksfshjdnvxisdfhsdhfjkdmbsdFDGDFHGssd42312dfsddfsdZ');
 define('routes_Auth_wocman_workman', 'gfksfshjdnv123AsdSwAQxisdfhsdhfjkdmbsdfgsdfjkdfjd');
+
 define('wocman_token_column', 'wocmanVat2ooff_tokenXDF');
 
 //db parameters
@@ -36,6 +37,8 @@ if(!defined('WOCMAN_DIR'))
  define('WOCMAN_DIR', dirname(dirname(__FILE__))."/");
 }
 
+$const = "constant";
+
 $host = server;
 $dbE = serverDatabase;
 $user = serverUser;
@@ -43,18 +46,13 @@ $pass = serverPassword;
 
 
 $tbl_temp = WOCMAN_PREFIX."temp";
-$tbl_customer = WOCMAN_PREFIX."customer";
 $tbl_workmen = WOCMAN_PREFIX."workmen";
-$tbl_qualification = WOCMAN_PREFIX."qualification";
-$tbl_location = WOCMAN_PREFIX."location";
-$tbl_category = WOCMAN_PREFIX."category";
-$tbl_work = WOCMAN_PREFIX."work";
+$tbl_services = WOCMAN_PREFIX."services";
+$tbl_services_type = WOCMAN_PREFIX."service_type";
+$tbl_workman_services_type = WOCMAN_PREFIX."workman_service_type";
+
+$tbl_customer = WOCMAN_PREFIX."customer";
 $tbl_wocman = WOCMAN_PREFIX."wocman";
-
-$tbl_customer_workman = WOCMAN_PREFIX."customer_workman";
-$tbl_category_workman = WOCMAN_PREFIX."category_workman";
-
-
 $tbl_updater = WOCMAN_PREFIX."wocman_queries";
 
 $link = new mysqli($host,$user,$pass);
@@ -105,6 +103,7 @@ if (!$db_selected) {
 
 	$mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
 	$_SESSION['mysqli']=$mysqli;
+	include WOCMAN_DIR.'database/'.WOCMAN_PREFIX_FILE.'structure.php';
 
 }
 
@@ -136,7 +135,7 @@ function checkPastExistence($mysqli,$tbl,$columnName,$tblOld){
 		//do something here
 		$mysqli->query("DROP TABLE `".$tblOld."` ");
 		$mysqli->query("RENAME TABLE `".$tbl."` TO `".$tblOld."` ");
-		$mysqli->query("CREATE TABLE IF NOT EXISTS `".$tbl."` (`id` int(11) UNSIGNED AUTO_INCREMENT,`email` varchar(225) NOT NULL,`name` varchar(225) NOT NULL,`phone` varchar(225) NOT NULL,`password` varchar(225) NOT NULL,`image` varchar(225)  NULL,`location` varchar(225) NOT NULL,`secret_key` varchar(225) NOT NULL,`date` timestamp,`".wocman_token_column."` varchar(225) NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1");
+		$mysqli->query("CREATE TABLE IF NOT EXISTS `".$tbl."` (`id` int(11) NOT NULL AUTO_INCREMENT, `email` varchar(225) NOT NULL, `password` varchar(225) NOT NULL, `active` boolean, `fname` varchar(225) NULL, `lname` varchar(225) NULL, `uname` varchar(225) NULL, `phone` varchar(225) NULL, `country` varchar(225) NULL, `city` varchar(225) NULL, `image` varchar(225)  NULL, `qualification` varchar(225) NULL, `qualification_link` varchar(225) NULL,`secret_key` varchar(225)  NULL,`date` timestamp,`".wocman_token_column."` varchar(225) NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1");
 	}
 }
 

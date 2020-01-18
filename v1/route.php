@@ -9,11 +9,16 @@
 
 //routes
 
-//workman route
+//workman route new
+define("workman_signup", "POST,workman_signupwithjustemail,false,NoAuthHere");
 define("workman_login", "POST,workman_login,false,NoAuthHere");
-define("workman_register", "POST,workman_register,false,NoAuthHere");
+define("workman_setup", "POST,workman_setupaccount,false,workman");
+define("workman_setup_profile_services", "GET,workman_setupProfileServices,false,workman");
+define("workman_setup_profile_service_type", "GET,workman_setupProfileServiceType,false,workman");
+define("workman_setup_profile", "POST,workman_setupprofile,false,workman");
 define("workman_upload", "POST,workman_upload,false,workman");
 define("workman_attach", "POST,workman_upload_photo,false,workman");
+
 
 
 //customer route

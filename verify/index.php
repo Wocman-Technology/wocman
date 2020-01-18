@@ -19,43 +19,33 @@ $url = website_link;
 $routes = $_GET['url'];
 $x = explode(WOCMAN_SPLIT, $routes);
 $woc_token = getToken(120);
-if ($x[2] == "Workman") {
+if ($x[2] == "workman") {
     $check = $mysqli->query("SELECT * FROM $tbl_temp WHERE email = '$x[1]' ");
     if ($check->num_rows == 1) {
         $row_fetch = $check->fetch_assoc();
 
-        $psd = $row_fetch['password'];
-        $type = $row_fetch['type'];
         $email =$row_fetch['email'];
-        $name =$row_fetch['name'];
-        $phone =$row_fetch['phone'];
-        $qualification =$row_fetch['qualification'];
-        $location = $row_fetch['location'];
+        $verify = $row_fetch['verify'];
+        $type = $row_fetch['type'];
+        // var_dump($verify);
 
-        if(password_verify($psd, trim($x[0],'?')) == 1 && $type == $x[2]){
+        if($verify == trim($x[0],'?') && $type == $x[2]){
 
-             $checks = $mysqli->query("SELECT * FROM $tbl_workmen WHERE email = '$x[1]' ");
+            $checks = $mysqli->query("SELECT * FROM $tbl_workmen WHERE email = '$x[1]' ");
             if ($checks->num_rows < 1) {
 
-            if($mysqli->query("INSERT INTO $tbl_workmen(`email`,`name`,`phone`,`password`,`qualification`,`location`,`active`,`".wocman_token_column."`) VALUES('$email','$name','$phone','".trim($x[0],'?')."','$qualification','$location','1', '$woc_token') ")){
+            if($mysqli->query("INSERT INTO $tbl_workmen(`email`,`password`,`active`,`".wocman_token_column."`) VALUES('$email','".$row_fetch['password']."','1', '$woc_token') ")){
                 $mysqli->query("DELETE FROM $tbl_temp WHERE id='".$row_fetch['id']."' ");
 
         $url_email = website_link."/workman_login";
         $bodyTitle = "Wocman  Account Verified";
         $subject = "Account Verification";
-        $bodyText = '<h3>Welcome, '. $row_fetch['name'].'!</h3>
-                                Account verification was successful, join millions of others to build, renovate and restore the world.
-                                <br/>
-                                Kindly login to proceed with services.
-
-                                <br/>Welcome!
-                                <br/>
-                                <center>
-                                    <a href="'.$url_email.'"><button style="padding:10px;background-color:#022F8E;color:white;border:0px;font-family:\'Manjari\',sans-serif;outline:none;font-weight:bold">Login Now</button></a></center>
-                                <br/>Wocman Technology
-                                
-                                <br/>
-                                <br/>'; 
+        $bodyText = 'Account verification was successful, join millions of others to build, renovate and restore the world.<br/>
+                    Kindly login to proceed with services.<br/>
+                    Thank You!<br/>
+                    <center><a href="'.$url_email.'"><button style="padding:10px;background-color:#022F8E;color:white;border:0px;font-family:\'Manjari\',sans-serif;outline:none;font-weight:bold">Login Now</button></a></center><br/>
+                    Wocman Technology<br/>
+                    <br/>'; 
 
         include WOCMAN_DIR."emailhandler.php";
         $myObj = new stdClass();
@@ -71,7 +61,7 @@ if ($x[2] == "Workman") {
         $myObj->row = "none";
         $myObj->count = 0;
         $myObj->status = false;
-        $myObj->status_code = "Could not seed data";
+        $myObj->status_code = "Could not seed data, confirm your email again!";
         $myJSON = json_encode($myObj);
         echo $myJSON;
     }
@@ -86,7 +76,6 @@ if ($x[2] == "Workman") {
         $myJSON = json_encode($myObj);
         echo $myJSON;
     
-
     }
 
         }else{

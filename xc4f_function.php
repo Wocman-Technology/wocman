@@ -176,62 +176,77 @@ class General
 
     public function verifyCustomer($tbl,$column,$data){
         //purify parameters
-            $data = mysqli_real_escape_string($this->conn, $data);
+            //$data = mysqli_real_escape_string($this->conn, $data);
         //query session 
-            if ($_SESSION['routes_Auth_wocman_cutomer'] !=  $data) {
-                return false;
-            }
+            // if (isset($_SESSION['routes_Auth_wocman_cutomer'])?$_SESSION['routes_Auth_wocman_cutomer']:"" !=  $data) {
+            //     return true;
+            // }else{
+            //     return false;
+            // }
         //query the database
             $sql = $this->conn->query("SELECT * FROM $tbl WHERE `$column` = '$data' ");
             $countNumberOfReturns = $sql->num_rows;
 
         //return variables
-            if ($countNumberOfReturns != 1) {
-                return false;
-            }else{
+            if ($countNumberOfReturns == 1) {
                 return true;
+            }else{
+                return false;
             }
 
     }
     public function verifyWocman($tbl,$column,$data){
         //purify parameters
-            $data = mysqli_real_escape_string($this->conn, $data);
+            //$data = mysqli_real_escape_string($this->conn, $data);
         //query session 
-            if ($_SESSION['routes_Auth_wocman_admin'] !=  $data) {
-                return false;
-            }
+            // if (isset($_SESSION['routes_Auth_wocman_admin'])?$_SESSION['routes_Auth_wocman_admin']:"" ==  $data) {
+            //     return true;
+            // }else{
+            //     return false;
+            // }
         //query the database
-            $sql = $this->conn->query("SELECT * FROM $tbl WHERE `$column` = '$data' ");
+            $sql = $this->conn->query("SELECT * FROM $tbl WHERE `".$column."` = '".$data."'");
             $countNumberOfReturns = $sql->num_rows;
 
         //return variables
-            if ($countNumberOfReturns != 1) {
-                return false;
-            }else{
+            if ($countNumberOfReturns == 1) {
                 return true;
+            }else{
+                return false;
             }
     }
     public function verifyWorkman($tbl,$column,$data){
         //purify parameters
-            $data = mysqli_real_escape_string($this->conn, $data);
-        //query session 
-            if ($_SESSION['routes_Auth_wocman_workman'] !=  $data) {
-                return false;
-            }
+            //$data = mysqli_real_escape_string($this->conn, $data);
+        // //query session 
+            // if (isset($_SESSION['routes_Auth_wocman_workman'])?$_SESSION['routes_Auth_wocman_workman']:"" ==  $data) {
+            //     return true;
+            // }else{
+            //     return false;
+            // }
         //query the database
             $sql = $this->conn->query("SELECT * FROM $tbl WHERE `$column` = '$data' ");
             $countNumberOfReturns = $sql->num_rows;
 
         //return variables
-            if ($countNumberOfReturns != 1) {
-                return false;
-            }else{
+            if ($countNumberOfReturns == 1) {
                 return true;
+            }else{
+                return false;
             }
     }
     public function updateToken($tbl,$column,$data,$id){
         //query the database
         $sql = $this->conn->query("UPDATE  `$tbl` SET `$column` = '$data' WHERE `id` = '$id' ");  
+    }
+    public function getByUuid($tbl,$column,$data){
+        //query the database
+        $sql = $this->conn->query("SELECT * FROM `$tbl`  WHERE `$column` = '$data' ");  
+        if ($sql->num_rows > 0) {
+            return $sql->fetch_assoc();
+        }else{
+            return false;
+        }
     }
 }
 
