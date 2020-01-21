@@ -6,7 +6,7 @@ export const Loginwrapper = styled.body`
     height: 100vh;
     width: auto;
     scroll-behavior: smooth;
-    padding-bottom: 3rem;
+    padding-bottom: 5rem;
     background-image: url(${AuthImage});
     background-position: center;
     object-fit: contain;
@@ -19,7 +19,7 @@ export const Loginwrapper = styled.body`
     }
     .custom-container {
         display: flex;
-        padding: 2rem 5rem;
+        padding: 2rem 5rem 5rem;
         margin: 0 auto 0;
         height: 90%;
         justify-content: space-between;
@@ -137,6 +137,9 @@ export const Loginwrapper = styled.body`
                 width: 100% !important;
                 margin: 3rem 0;
             }
+            div:nth-child(2) {
+                margin-bottom: 5rem;
+            }
         }
     }
 
@@ -173,7 +176,7 @@ export const SignInButton = styled(CustomButton)`
 export const FormWrapper = styled.div`
     height: 70%;
     width: 80% !important;
-    margin: auto;
+    margin: 0 auto;
     text-align: center;
     justify-content: center;
 
