@@ -19,9 +19,9 @@ export const Loginwrapper = styled.body`
     }
     .custom-container {
         display: flex;
-        padding: 4rem 5rem;
-        margin: 1.3rem auto 0;
-        height: 100vh;
+        padding: 2rem 5rem;
+        margin: 0 auto 0;
+        height: 90%;
         justify-content: space-between;
         div:nth-child(1) {
             width: 50%;
