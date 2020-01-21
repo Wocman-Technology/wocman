@@ -5,7 +5,6 @@ import { Services } from "./Pages/services/services.component";
 import { Contact } from "./Pages/contact/contact.component";
 import { Login } from "./Pages/login/login.component";
 import { Switch, Route } from "react-router-dom";
-import { Footer } from "./components/footer/footer.component";
 import "./App.css";
 
 const App = () => {

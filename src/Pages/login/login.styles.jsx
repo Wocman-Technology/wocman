@@ -12,16 +12,20 @@ export const Loginwrapper = styled.body`
     background-size: cover;
     .img__div {
         position: absolute;
-        margin: 2rem;
+        margin: 1.1rem;
         cursor: pointer;
     }
     .custom-container {
         display: flex;
         padding: 4rem 5rem;
-        margin: 15rem auto 0;
+        margin: 1.3rem auto 0;
+        height: 100vh;
         justify-content: space-between;
         div:nth-child(1) {
             width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         h2 {
             font-style: normal;
             font-weight: bold;
@@ -37,7 +41,7 @@ export const Loginwrapper = styled.body`
             }
         div:nth-child(2){
             width: 40%;
-            padding: 3rem 0.5rem;
+            padding: 1rem 0.5rem;
             align-items: center;
             background: #FFFFFF;
             border-radius: 10px;
@@ -46,7 +50,7 @@ export const Loginwrapper = styled.body`
                 margin: 0 auto;
                 color: #552d1e;
                 & > * {
-                    margin-top: 1rem;
+                    margin-top: 0.6rem;
                     display: block;
                 }
                 small {
@@ -54,38 +58,94 @@ export const Loginwrapper = styled.body`
                 }
                 .google {
                     display: flex;
-                    width: 70%;
+                    width: 100%;
                     &:hover {
                         div, button {
                         background: #FFF;
                         color: #552d1e;
                         }
                     }
-                    div {
+                }
+                .sign-in-form {
+                    text-align: start;
+                    label {
+                        color: #000000;
+                        small {
+                        font-size: 0.9rem;
+                        line-height: 28px;
+                        }
+                    }
+                    .input-container {
+                        min-width: 100%;
+                        padding: 0 !important;
+                          input {
+                        display: block;
+                        width: 100%;
+                        mix-blend-mode: normal;
+                        opacity: 1;
+                        height: 38px;
+                        font-size: 0.9rem;
+                        border: 1px solid #1C1C1C;
+                        box-sizing: border-box;
+                        border-radius: 3px;
+                        outline: none;
+                        padding: 0 1rem;
+                        &::placeholder {
+                            font-size: 0.7rem;
+                        }
+                    }
+                    }
+                }
+                .signup {
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    margin-top: 0.8rem;
+                    p, span {
+                        text-transform: uppercase;
+                        font-size: 0.8rem;
+                        margin-bottom: 0;
+                        padding-bottom: 0;
                         display: inline-block;
-                        color: #FFF;
-                        background: #552d1e;
-                        border-right: none;
-                        padding-right: 0;
-                        height: 48px;
-                        width: 25%;
-                        margin-top: 1.1rem;
-                        i {
-                            display: inline-block;
-                            margin-top: 1.2rem;
+                        letter-spacing: 1.08333px;
+                    }
+                    span {
+                        color: #4D4D4D;
+                    }
+                    a {
+                        text-decoration: none;
+                        display: inline-block;
+                        margin-top: 6.8px;
+                        color: #000000;
+                        &:hover {
+                            span {
+                            text-decoration: underline !important;
+                            }
                         }
                     }
                 }
             }
         }
+        @media screen and (max-width: 768px) {
+            margin-top: 5rem;
+            padding: 0 1.3rem;;
+            width: 100%;
+            flex-wrap: wrap;
+            & > div {
+                width: 100% !important;
+                margin: 3rem 0;
+            }
+        }
     }
+
 `;
 
-export const SignUpButton = styled(CustomButton)`
+export const SignInWithGmail = styled(CustomButton)`
     margin: 0 auto;
     display: inline-block;
     border-left: none;
-    width: 75%;
+    border-radius: 6px;
+    width: 100%;
     word-spacing: 1px;
     letter-spacing: 1.5px;
     padding-left: 0;
@@ -93,10 +153,23 @@ export const SignUpButton = styled(CustomButton)`
     font-size: 10px;
     text-transform: uppercase;
     font-weight: bolder;
+     i {
+            display: inline-block;
+            font-size: 1rem;
+            margin-right: 1rem;
+        }
+`
+
+export const SignInButton = styled(CustomButton)`
+    border-radius: 6px;
+    font-size: 0.8rem;
+    width: 60%;
+    margin: 2.5rem auto 0;
+    padding-bottom: 5px;
 `
 
 export const FormWrapper = styled.div`
-    height: 80%;
+    height: 70%;
     width: 80% !important;
     margin: auto;
     text-align: center;
