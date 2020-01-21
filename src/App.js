@@ -5,6 +5,7 @@ import { Services } from "./Pages/services/services.component";
 import { Contact } from "./Pages/contact/contact.component";
 import { Login } from "./Pages/login/login.component";
 import { SignUp } from "./Pages/signup/signup.component";
+import { Verifyemail } from "./Pages/verify-email/verify-email.component"
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
 
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/contact" component={Contact} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={SignUp} />
+        <Route path="/verify-email" component={Verifyemail} />
       </Switch>
     </>
   );
