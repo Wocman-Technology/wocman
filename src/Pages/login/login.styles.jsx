@@ -126,7 +126,7 @@ export const Loginwrapper = styled.body`
                 }
             }
         }
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 864px) {
             margin-top: 5rem;
             padding: 0 1.3rem;;
             width: 100%;
@@ -141,7 +141,7 @@ export const Loginwrapper = styled.body`
 `;
 
 export const SignInWithGmail = styled(CustomButton)`
-    margin: 0 auto;
+    margin: 0 auto 2rem;
     display: inline-block;
     border-left: none;
     border-radius: 6px;
