@@ -5,13 +5,14 @@ import { CustomButton } from "../../components/custom-button/custom-button.compo
 export const Signupwrapper = styled.body`
     height: 100vh;
     width: auto;
+    scroll-behavior: smooth;
     background-image: url(${AuthImage});
     background-position: center;
     object-fit: contain;
     background-repeat: no-repeat;
     background-size: cover;
     .img__div {
-        position: absolute;
+        position: relative;
         margin: 1.1rem;
         cursor: pointer;
     }
@@ -108,7 +109,7 @@ export const Signupwrapper = styled.body`
             }
             @media screen and (max-width: 768px) {
                 width: 90%;
-                margin: 10rem 2rem;
+                margin: 10rem auto;
             }
         }
 `
