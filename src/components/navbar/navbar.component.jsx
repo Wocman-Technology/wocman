@@ -45,7 +45,7 @@ export const NavBar = () => {
           </MDBNavbarNav>
           <MDBNavbarNav right>
             <MDBNavItem>
-              <MDBNavLink className="waves-effect" to="#!">
+              <MDBNavLink className="waves-effect" to="/signup">
                 <MDBBtn color="brown">Get Wocman</MDBBtn>
               </MDBNavLink>
             </MDBNavItem>
