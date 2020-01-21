@@ -3,15 +3,23 @@ import { CustomButton } from "../../components/custom-button/custom-button.compo
 
 export const VerifyEmailWrapper = styled.div`
     width: 100%;
-    margin: 5rem auto;
-
+    margin: 2rem auto;
+& > div {
+    width: 70%;
+    padding: 3rem 0;
+    margin: auto;
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    border: 0.3px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0px 4px 26px rgba(0, 0, 0, 0.06);
     div {
         width: 100%;
         text-align: center;
         img {
             display: block;
             margin: auto;
-            width: auto;
+            width: 50%;
         }
     }
     div:nth-child(2) {
@@ -39,6 +47,10 @@ export const VerifyEmailWrapper = styled.div`
              width: 90%;
         }
     }
+    @media screen and (max-width: 768px){
+        width: 100%;
+    }
+}
 `
 
 
