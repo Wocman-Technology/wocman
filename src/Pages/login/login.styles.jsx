@@ -6,7 +6,7 @@ export const Loginwrapper = styled.body`
     height: 100vh;
     width: auto;
     scroll-behavior: smooth;
-    padding-bottom: 5rem;
+    /* padding-bottom: 5rem; */
     background-image: url(${AuthImage});
     background-position: center;
     object-fit: contain;
