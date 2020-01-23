@@ -28,7 +28,7 @@ export const Login = () => (
       <div>
         <FormWrapper>
           <h4>Sign in</h4>
-          <small>Kindly sign into your workstation</small>
+          <small>Kindly sign into your wocstation</small>
           <div className="google">
             {/* <div><i className="fab fa-google"></i></div> */}
             <SignInWithGmail>
