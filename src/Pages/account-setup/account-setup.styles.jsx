@@ -14,8 +14,9 @@ import { CustomButton } from "../../components/custom-button/custom-button.compo
         border-radius: 4px;
 
         @media screen and (max-width: 768px){
-          padding: 2rem 1rem;
+          padding: 2rem 1.3rem;
           max-width: 100%;
+          width: 100%;
           margin: 2rem 0;
           height: auto;
         }
