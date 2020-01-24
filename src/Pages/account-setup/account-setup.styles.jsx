@@ -12,11 +12,12 @@ import { CustomButton } from "../../components/custom-button/custom-button.compo
         background: #ffffff;
         box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
         border-radius: 4px;
+        overflow-x: hidden;
 
         @media screen and (max-width: 768px){
           padding: 2rem 1.3rem;
+          min-width: 100%;
           max-width: 100%;
-          width: 100%;
           margin: 2rem 0;
           height: auto;
         }
