@@ -16,7 +16,7 @@ import { CustomButton } from "../../components/custom-button/custom-button.compo
         @media screen and (max-width: 768px){
           padding: 2rem 1rem;
           max-width: 100%;
-          height: 87vh;
+          height: auto;
         }
         div:first-child {
           text-align: center;
@@ -28,7 +28,10 @@ import { CustomButton } from "../../components/custom-button/custom-button.compo
             font-size: 0.9rem;
           }
         }
-        div:nth-child(2) {
+        & > div:nth-child(2) {
+          @media screen and (max-width: 768px){
+          padding: 1.5rem;
+        }
           form {
             .container {
         display: block;
@@ -104,11 +107,18 @@ import { CustomButton } from "../../components/custom-button/custom-button.compo
           flex-wrap: wrap;
           width: 100%;
           justify-content: space-between;
+           @media screen and (max-width: 768px){
+               justify-content: center;
+               margin-bottom: 1rem;
+             }
           div {
             display: flex;
             flex-wrap: nowrap;
             width: 48%;
             align-items: center;
+            @media screen and (max-width: 768px){
+               width: 90%;
+             }
             div {
             border: 1px solid rgba(85, 45, 30, 0.4);
             border-right: 0;
@@ -141,6 +151,7 @@ import { CustomButton } from "../../components/custom-button/custom-button.compo
             font-weight: 800;
              @media screen and (max-width: 768px){
                margin: 0.9rem 0;
+               max-width: 70%;
              }
           }
           }
