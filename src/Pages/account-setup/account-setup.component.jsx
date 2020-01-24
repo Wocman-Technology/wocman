@@ -3,7 +3,8 @@ import { NavBar } from "../../components/navbar/navbar.component";
 import { Footer } from "../../components/footer/footer.component";
 import {
   AccountSetUpWrapper,
-  AccountSetUpButton
+  AccountSetUpButton,
+  TermsWrapper
 } from "./account-setup.styles";
 
 export const AccountSetup = () => {
@@ -28,13 +29,17 @@ export const AccountSetup = () => {
               <input type="text" name="" id="" />
               <input type="text" name="" id="" />
             </div>
-            <div className="terms">
+            <TermsWrapper>
               <small>
                 Yes, I understand and agree to the Wocman Terms of service,
                 including the User Agreement and Privacy Policy
               </small>
-              <input type="checkbox" name="accept" id="" />
-            </div>
+              <label class="container">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+              </label>
+            </TermsWrapper>
+
             <AccountSetUpButton type="submit">Submit</AccountSetUpButton>
           </form>
         </div>
