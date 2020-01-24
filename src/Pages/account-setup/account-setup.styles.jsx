@@ -10,12 +10,12 @@ import { CustomButton } from "../../components/custom-button/custom-button.compo
         padding: 2rem;
         max-width: 60%;
         background: #ffffff;
-        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
         border-radius: 4px;
 
         @media screen and (max-width: 768px){
           padding: 2rem 1rem;
-          max-width: 90%;
+          max-width: 100%;
           height: 87vh;
         }
         div:first-child {
