@@ -15,7 +15,8 @@ import { CustomButton } from "../../components/custom-button/custom-button.compo
 
         @media screen and (max-width: 768px){
           padding: 2rem 1rem;
-          max-width: 90%;
+          max-width: 100%;
+          margin: 2rem 0;
           height: auto;
         }
         div:first-child {
