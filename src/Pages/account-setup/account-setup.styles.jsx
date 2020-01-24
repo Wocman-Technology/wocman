@@ -120,6 +120,7 @@ import { CustomButton } from "../../components/custom-button/custom-button.compo
             border-bottom-right-radius: 0;
             padding: 0.5rem;
             text-align: center;
+            font-weight: 700;
             font-size: 0.9rem;
             color: rgba(85, 45, 30, 0.25);
             }
