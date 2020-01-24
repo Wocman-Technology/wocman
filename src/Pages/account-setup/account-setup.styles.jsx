@@ -63,8 +63,8 @@ import { CustomButton } from "../../components/custom-button/custom-button.compo
         left: 0;
         height: 25px;
         border-radius: 3px;
+        border: 0.8px solid #552d1e;
         width: 25px;
-        background-color: #eee;
       }
 
       /* On mouse-over, add a grey background color */
@@ -72,7 +72,7 @@ import { CustomButton } from "../../components/custom-button/custom-button.compo
         background-color: #ccc;
       }
 
-      /* When the checkbox is checked, add a blue background */
+      /* When the checkbox is checked, add a brown background */
       .container input:checked ~ .checkmark {
         background-color: #552d1e;
       }
