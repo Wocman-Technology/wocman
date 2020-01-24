@@ -12,10 +12,20 @@ import { CustomButton } from "../../components/custom-button/custom-button.compo
         background: #ffffff;
         box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.2);
         border-radius: 4px;
+
+        @media screen and (max-width: 768px){
+          padding: 2rem 1rem;
+          max-width: 90%;
+          height: 87vh;
+        }
         div:first-child {
           text-align: center;
+          h2 {
+            font-size: 1.5rem;
+          }
           p {
             margin: 1rem 0;
+            font-size: 0.9rem;
           }
         }
         div:nth-child(2) {
@@ -94,17 +104,46 @@ import { CustomButton } from "../../components/custom-button/custom-button.compo
           flex-wrap: wrap;
           width: 100%;
           justify-content: space-between;
-          input {
+          div {
+            display: flex;
+            flex-wrap: nowrap;
+            width: 48%;
+            align-items: center;
+            div {
+            border: 1px solid rgba(85, 45, 30, 0.4);
+            border-right: 0;
+            height: 40px;
+            max-width: 40%;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            padding: 0.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(85, 45, 30, 0.25);
+            }
+             input {
             display: inline-block;
-            width: 47%;
+            max-width: 60%;
             margin: 1.5rem 0;
             outline: none;
+            padding: 0 1.2rem;
             background: #ffffff;
             border: 1px solid rgba(85, 45, 30, 0.4);
             height: 40px;
             box-sizing: border-box;
             border-radius: 5px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            color: #552D1E !important;
+            font-weight: 800;
+             @media screen and (max-width: 768px){
+               margin: 0.9rem 0;
+             }
           }
+          }
+         
         }
       `;
 
@@ -112,10 +151,19 @@ import { CustomButton } from "../../components/custom-button/custom-button.compo
         width: 70%;
         text-align: center;
         margin: auto;
+        small {
+          span {
+            color: #552d1e;
+            font-weight: 900;
+          }
+        }
       `
 
       export const AccountSetUpButton = styled(CustomButton)`
         border-radius: 6px;
         margin: 2rem auto 0;
-        min-width: 300px;
+        min-width: 15rem;
+        @media screen and (max-width: 768px){
+          margin: 2.7rem auto 0;
+        }
       `;
