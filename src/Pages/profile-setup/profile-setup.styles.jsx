@@ -34,20 +34,13 @@ export const Container = styled.div`
         background-image: url(${SelectIcon});
         background-repeat: no-repeat, repeat;
         background-position: right 2em top 50%, 0 0;
-        background-size: .65em auto, 100%;
+        background-size: .85em auto, 100%;
         -moz-appearance: none;
         -webkit-appearance: none;
         appearance: none;
         &::-ms-expand {
             display: none;
         }
-        &:active {
-            animation: flip 3s linear 0.5s forwards;
-        }
-        @keyframes flip {
-            from {transform: rotate(0deg)}
-            to {transform: rotate(90deg)}
-        } 
         }
     }
 `
