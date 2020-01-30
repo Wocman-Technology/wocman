@@ -174,7 +174,7 @@ export const SignInButton = styled(CustomButton)`
 `
 
 export const FormWrapper = styled.div`
-    height: 70%;
+    height: auto;
     width: 80% !important;
     margin: 0 auto;
     text-align: center;

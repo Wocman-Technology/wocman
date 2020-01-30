@@ -5,8 +5,9 @@ import { Services } from "./Pages/services/services.component";
 import { Contact } from "./Pages/contact/contact.component";
 import { Login } from "./Pages/login/login.component";
 import { SignUp } from "./Pages/signup/signup.component";
-import { Verifyemail } from "./Pages/verify-email/verify-email.component"
+import { Verifyemail } from "./Pages/verify-email/verify-email.component";
 import { AccountSetup } from "./Pages/account-setup/account-setup.component";
+import { ProfileSetup } from "./Pages/profile-setup/profile-setup.component";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
 
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/signup" component={SignUp} />
         <Route path="/verify-email" component={Verifyemail} />
         <Route path="/account-setup" component={AccountSetup} />
+        <Route path="/profile-setup" component={ProfileSetup} />
       </Switch>
     </>
   );
